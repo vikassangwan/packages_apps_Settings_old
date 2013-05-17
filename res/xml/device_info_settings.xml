@@ -29,6 +29,11 @@
                     android:targetClass="android.romstats.AnonymousStats" />
         </PreferenceScreen>
 
+        <PreferenceScreen
+            android:key="donate"
+            android:title="@string/donate_ose_title"
+            android:summary="@string/donate_ose_summary" />
+
         <!-- Device status -->
         <PreferenceScreen android:key="status_info"
                 android:title="@string/device_status"

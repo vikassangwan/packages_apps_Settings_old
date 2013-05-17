@@ -1827,4 +1827,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- OSE Logo -->
     <string name="logo_link" formatted="false">https://www/drdevs.com/subs/ose/</string>
 
+    <!-- Donate to Team-OSE Builds -->
+    <string name="donate_ose_title">Support Team-OSE</string>
+    <string name="donate_ose_summary">Donate to Team-OSE.</string>
+    <string name="donate_link" formatted="false">http://goo.gl/EJxbSh</string>
 </resources>
