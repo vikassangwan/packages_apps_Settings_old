@@ -1560,4 +1560,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="weather_tile_color">Color Icon</string>
     <string name="weather_tile_mono">Mono Icon</string>
     <string name="weather_tile_vclouds">vClouds Icon</string>
+
+    <!-- OnClick Fliptile animation -->
+    <string name="flip_qs_tiles_title">Flip tiles</string>
+    <string name="flip_qs_tiles_summary">Flips the tiles on touch</string>
 </resources>
