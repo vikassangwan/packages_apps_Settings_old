@@ -88,7 +88,14 @@
         android:fragment="com.android.settings.ose.AdvancedSettings"
         android:icon="@drawable/ic_settings_advanced"
         android:title="@string/advanced_options_settings_title" />
-    
+
+    <!-- Performance -->
+    <header
+        android:id="@+id/performance_controls"
+        android:fragment="com.brewcrewfoo.performance.activities.MainActivity"
+        android:icon="@drawable/ic_ose_performance"
+        android:title="@string/performance_settings_title" />
+
     <!-- DEVICE -->
     <header android:id="@+id/device_section"
         android:title="@string/header_category_device" />

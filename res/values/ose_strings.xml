@@ -922,6 +922,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="storage_rescan_media_complete">Scan completed</string>
 
     <!-- Performance Settings | Warning dialog -->
+    <string name="performance_settings_title">Performance</string>
     <string name="performance_settings_warning_header">Warning</string>
     <string name="performance_settings_warning_title">Proceed with Caution</string>
 
