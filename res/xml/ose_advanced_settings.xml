@@ -40,6 +40,18 @@
         android:fragment="com.android.settings.ose.PropModder"/>
 
     <PreferenceScreen
+        android:key="screen_state_service"
+        android:fragment="com.android.settings.ose.fragments.ScreenStateToggles"
+        android:title="@string/screen_state_toggles_title"
+        android:summary="@string/screen_state_toggles_summary" />
+
+    <PreferenceScreen
+        android:key="wakelock_blocker"
+        android:fragment="com.android.settings.ose.fragments.WakeLockBlocker"
+        android:title="@string/wakelock_blocker"
+        android:summary="@string/wakelock_blocker_header_summary" /> 
+
+    <PreferenceScreen
         android:key="devicesettings_app"
         android:title="@string/device_settings_title">
         <intent
