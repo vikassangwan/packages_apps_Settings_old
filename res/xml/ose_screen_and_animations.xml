@@ -5,10 +5,23 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/general_settings_title">
 
-        <PreferenceScreen
+   <PreferenceCategory
+        android:key="category_animation_options"
+        android:title="@string/display_category_animation_options_title" >
+
+       <PreferenceScreen
             android:id="@+id/animations"
             android:title="@string/title_animation_controls"
             android:summary="@string/header_summary_animation"
             android:fragment="com.android.settings.ose.fragments.AnimationControls" />
+
+       <ListPreference
+            android:key="system_power_crt_mode"
+            android:dialogTitle="@string/system_power_crt_mode_dialog_title"
+            android:title="@string/system_power_crt_mode_title"
+            android:entries="@array/entries_system_power_crt_mode"
+            android:entryValues="@array/values_system_power_crt_mode" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>

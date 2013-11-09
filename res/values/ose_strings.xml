@@ -204,6 +204,7 @@
     <string name="safe_headset_volume_warning_dialog_text">Listening at high volume for long periods may damage your hearing. Disable it with caution.</string>
 
     <!-- Display : Animation options -->
+    <string name="screen_and_animations_title">Appearance</string>
     <string name="display_category_animation_options_title">Animation options</string>
     <string name="system_power_crt_mode_title">CRT animation </string>
     <string name="system_power_crt_mode_dialog_title">CRT animation</string>
@@ -1116,10 +1117,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!--AppOps-->
     <string name="appops_settings_title">App privacy</string>
-
-    <!-- Display : Animation options -->
-    <string name="screen_and_animations_title">Appearance</string>
-    <string name="display_category_animation_options_title">Appearance</string>
 
     <!-- Animation Controls -->  
     <string name="title_animation_controls">Custom System Animations</string>  
