@@ -33,4 +33,7 @@
         Setting to false will disable Volume Rocker Wake support -->
     <bool name="config_show_volumeRockerWake">true</bool>
 
+    <integer name="lcd_density_max" translatable="false">160</integer>
+    <integer name="lcd_density_min" translatable="false">480</integer>
+
 </resources>
