@@ -19,6 +19,11 @@
     android:title="@string/interface_settings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceScreen
+        android:key="ose_screen_and_animations"
+        android:fragment="com.android.settings.ose.ScreenAndAnimations"
+        android:title="@string/screen_and_animations_title" />
+
     <ListPreference
         android:key="lcd_density"
         android:title="@string/custom_density_title"
