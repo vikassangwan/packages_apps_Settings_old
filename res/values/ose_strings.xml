@@ -1109,4 +1109,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="lockscreen_battery_status_title">Battery status</string>
     <string name="lockscreen_battery_status_summary">Always show battery status on keyguard</string>
 
+    <!-- Font size sample text -->
+    <string name="font_size_sample">Sample</string>
+
 </resources>
