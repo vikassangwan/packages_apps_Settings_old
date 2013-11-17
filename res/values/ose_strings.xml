@@ -1112,4 +1112,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Font size sample text -->
     <string name="font_size_sample">Sample</string>
 
+    <!--AppOps-->
+    <string name="appops_settings_title">App privacy</string>
+
 </resources>
