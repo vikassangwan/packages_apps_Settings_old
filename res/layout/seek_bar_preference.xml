@@ -9,14 +9,14 @@
     android:paddingRight="10dp"
     android:paddingBottom="5dp"
     >
-    
+
     <TextView android:id="@android:id/title"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium" />
-    
+
     <TextView android:id="@android:id/summary"
             android:layout_alignParentLeft="true"
             android:layout_width="fill_parent"
@@ -31,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall" />
-    
+
     <TextView android:id="@+id/seekBarPrefValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -46,7 +46,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall" />
-    
+
     <LinearLayout android:id="@+id/seekBarPrefBarContainer"
             android:layout_alignParentLeft="true"
             android:layout_alignParentBottom="true"
@@ -54,5 +54,5 @@
             android:layout_height="wrap_content"
             android:layout_below="@android:id/summary">
     </LinearLayout>
-    
+
 </RelativeLayout>
