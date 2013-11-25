@@ -1900,4 +1900,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="battery_saver_network_cdma_title">CDMA Networks</string>
     <string name="battery_saver_system_title">System options</string>
 
+    <!-- Theme chooser -->
+    <string name="themes_settings_title">Themes</string>
 </resources>

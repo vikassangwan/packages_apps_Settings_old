@@ -5,7 +5,16 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/general_settings_title">
 
-   <PreferenceCategory
+  <PreferenceScreen
+        android:id="@+id/themes_settings"
+        android:title="@string/themes_settings_title">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="com.tmobile.themechooser"
+            android:targetClass="com.tmobile.themechooser.ThemeChooser" />
+  </PreferenceScreen>
+
+  <PreferenceCategory
         android:key="category_animation_options"
         android:title="@string/display_category_animation_options_title" >
 
