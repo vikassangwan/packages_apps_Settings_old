@@ -17,10 +17,16 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/misc_tweaks_title" >
 
-         <PreferenceScreen
+        <PreferenceScreen
             android:id="@+id/halo_settings"
             android:title="@string/halo_settings_title"
             android:fragment="com.android.settings.ose.Halo" />
+
+        <PreferenceScreen
+            android:key="active_display"
+            android:fragment="com.android.settings.ose.ActiveDisplaySettings"
+            android:title="@string/ad_settings_title"
+            android:summary="@string/ad_settings_summary" />
 
         <PreferenceScreen
             android:title="@string/lockscreen_notifications"
