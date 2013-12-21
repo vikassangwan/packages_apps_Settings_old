@@ -17,6 +17,11 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/misc_tweaks_title" >
 
+         <PreferenceScreen
+            android:key="recents_apps_panel"
+            android:fragment="com.android.settings.ose.RecentsPanel"
+            android:title="@string/recent_apps_panel_title" />
+
          <CheckBoxPreference
             android:key="disable_fc_notifications"
             android:title="@string/disable_fc_notifications_title"
