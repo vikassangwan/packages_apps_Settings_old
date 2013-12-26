@@ -27,6 +27,11 @@
             android:fragment="com.android.settings.ose.LockscreenNotifications" />
 
         <PreferenceScreen
+            android:key="app_sidebar"
+            android:fragment="com.android.settings.ose.AppSidebar"
+            android:title="@string/app_sidebar_title" />
+
+        <PreferenceScreen
             android:key="notification_drawer_qs"
             android:fragment="com.android.settings.ose.NotificationDrawerQsSettings"
             android:title="@string/notification_drawer_qs_title" />

@@ -1745,6 +1745,8 @@
 
         <activity android:name=".ose.MiscTweaks" />
 
+        <activity android:name=".ose.AppSidebar" />
+
         <activity android:name=".ApnEditor" />
 
          <!-- "Blacklist settings" UI, used only on voice-capable phone devices. -->
