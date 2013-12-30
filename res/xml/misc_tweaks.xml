@@ -18,6 +18,10 @@
     android:title="@string/misc_tweaks_title" >
 
          <PreferenceScreen
+            android:title="@string/lockscreen_notifications"
+            android:fragment="com.android.settings.ose.LockscreenNotifications" />
+
+         <PreferenceScreen
             android:key="recents_apps_panel"
             android:fragment="com.android.settings.ose.RecentsPanel"
             android:title="@string/recent_apps_panel_title" />
