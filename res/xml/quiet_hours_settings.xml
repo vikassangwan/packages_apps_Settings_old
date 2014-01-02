@@ -26,7 +26,7 @@
         android:summaryOff="@string/quiet_hours_enabled_off"
         android:defaultValue="false" />
 
-    <com.android.settings.slim.TimeRangePreference
+    <com.android.settings.ose.TimeRangePreference
         android:key="quiet_hours_timerange"
         android:dependency="quiet_hours_enabled" />
 

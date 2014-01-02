@@ -31,14 +31,14 @@
 
      <PreferenceScreen
              android:key="slim_notification_shortcuts"
-             android:fragment="com.android.settings.slim.dslv.ButtonsListViewSettings"
+             android:fragment="com.android.settings.ose.dslv.ButtonsListViewSettings"
              android:summary="@string/notification_shortcuts_settings_summary"
              android:title="@string/notification_shortcuts_settings_title">
          <extra android:name="buttonMode" android:value="5" />
          <extra android:name="maxAllowedButtons" android:value="16" />
          <extra android:name="disableLongpress" android:value="true" />
          <extra android:name="useAppPickerOnly" android:value="true" />
-         <extra android:name="fragment" android:value="com.android.settings.slim.fragments.NotificationsShortcutFragment" />
+         <extra android:name="fragment" android:value="com.android.settings.ose.fragments.NotificationsShortcutFragment" />
      </PreferenceScreen>
 
     <PreferenceCategory
@@ -48,7 +48,7 @@
             android:key="tile_picker"
             android:title="@string/tile_picker_title"
             android:summary="@string/tile_picker_summary"
-            android:fragment="com.android.settings.slim.quicksettings.QuickSettingsTiles" />
+            android:fragment="com.android.settings.ose.quicksettings.QuickSettingsTiles" />
 
         <ListPreference
             android:key="quick_pulldown"
@@ -59,7 +59,7 @@
 
         <PreferenceScreen
             android:key="quicksettings_tiles_style"
-            android:fragment="com.android.settings.slim.quicksettings.QuickSettingsTilesStyle"
+            android:fragment="com.android.settings.ose.quicksettings.QuickSettingsTilesStyle"
             android:title="@string/quicksettings_tiles_style"
             android:summary="@string/summary_quicksettings_tiles_style" />
 
@@ -67,7 +67,7 @@
         android:title="@string/additional_options_title" />
 
      <Preference
-         android:fragment="com.android.settings.slim.NotificationDrawerStyle"
+         android:fragment="com.android.settings.ose.NotificationDrawerStyle"
          android:key="notification_style"
          android:title="@string/notification_style_title"
          android:summary="@string/notification_style_summary" />

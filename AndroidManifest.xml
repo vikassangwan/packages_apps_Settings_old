@@ -172,33 +172,33 @@
 
         <!-- QuietHours SmsCall Service -->
 
-        <service android:name=".slim.service.SmsCallService"/>
-        <service android:name=".slim.service.AlarmService"/>
+        <service android:name=".ose.service.SmsCallService"/>
+        <service android:name=".ose.service.AlarmService"/>
 
         <receiver
-            android:name=".slim.service.AlarmReceiver">
+            android:name=".ose.service.AlarmReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.TIMEZONE_CHANGED"></action>
                 <action android:name="android.intent.action.TIME_CHANGED"></action>
                 <action android:name="android.intent.action.DATE_CHANGED"></action>
-                <action android:name="com.android.settings.slim.service.SCHEDULE_SERVICE_COMMAND"/>
+                <action android:name="com.android.settings.ose.service.SCHEDULE_SERVICE_COMMAND"/>
             </intent-filter>
         </receiver>
 
         <receiver
-            android:name=".slim.service.BootReceiver">
+            android:name=".ose.service.BootReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
         </receiver>
 
         <activity
-            android:name=".slim.service.BypassAlarm"
+            android:name=".ose.service.BypassAlarm"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:excludeFromRecents="true"
             android:launchMode="singleInstance"
             android:screenOrientation="portrait"
-            android:taskAffinity="com.android.settings.slim.service.BypassAlarm"
+            android:taskAffinity="com.android.settings.ose.service.BypassAlarm"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
 
         <!-- Wireless Controls -->
@@ -1696,7 +1696,7 @@
             android:theme="@style/CryptKeeperBlankTheme"
         />
 
-        <activity android:name=".slim.AutoBrightnessSetup"
+        <activity android:name=".ose.AutoBrightnessSetup"
                 android:excludeFromRecents="true"
                 android:theme="@*android:style/Theme.Holo.Dialog.Alert" />
 
@@ -1712,7 +1712,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.slim.blacklist.BlacklistSettings" />
+                android:value="com.android.settings.ose.blacklist.BlacklistSettings" />
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
                 android:resource="@id/security_settings" />
         </activity>
@@ -1727,7 +1727,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.slim.QuietHours" />
+                android:value="com.android.settings.ose.QuietHours" />
         </activity>
 
         <!-- Pseudo-activity used to provide an intent-filter entry point to battery icon settings -->
@@ -1740,7 +1740,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.slim.BatteryIconStyle" />
+                android:value="com.android.settings.ose.BatteryIconStyle" />
         </activity>
 
         <!-- Pseudo-activity used to provide an intent-filter entry point to rotation settings -->
@@ -1753,7 +1753,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.slim.DisplayRotation" />
+                android:value="com.android.settings.ose.DisplayRotation" />
         </activity>
 
         <!-- Pseudo-activity used to provide an intent-filter entry point to encryption settings -->
