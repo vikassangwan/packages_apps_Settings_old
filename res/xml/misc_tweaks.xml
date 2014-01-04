@@ -18,6 +18,11 @@
     android:title="@string/misc_tweaks_title" >
 
         <PreferenceScreen
+            android:key="interface_voice_tts"
+            android:fragment="com.android.settings.ose.DrivingMode"
+            android:title="@string/voice_tts_title" />
+
+        <PreferenceScreen
             android:id="@+id/halo_settings"
             android:title="@string/halo_settings_title"
             android:fragment="com.android.settings.ose.Halo" />
