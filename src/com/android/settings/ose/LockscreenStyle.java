@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 SlimRoms Project
+ * Copyright (C) 2014 OSE Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -231,7 +231,7 @@ public class LockscreenStyle extends SettingsPreferenceFragment
             } else  if (indexOf == 2) {
                 deleteLockIcon();
             } else {
-                resizeSlimLock();
+                resizeOSELock();
             }
             return true;
         } else if (preference == mColorizeCustom) {
@@ -281,8 +281,8 @@ public class LockscreenStyle extends SettingsPreferenceFragment
         if (value == null) {
             resId = R.string.lockscreen_lock_icon_default;
             mLockIcon.setValueIndex(2);
-        } else if (value.contains("slim_lock")) {
-            resId = R.string.lockscreen_lock_icon_slim;
+        } else if (value.contains("ose_lock")) {
+            resId = R.string.lockscreen_lock_icon_ose;
             mLockIcon.setValueIndex(1);
         } else {
             resId = R.string.lockscreen_lock_icon_custom;
@@ -335,21 +335,21 @@ public class LockscreenStyle extends SettingsPreferenceFragment
         updateLockSummary();
     }
 
-    private void resizeSlimLock() {
-        Bitmap slimLock = BitmapFactory.decodeResource(getResources(), R.drawable.slim_lock);
-        if (slimLock != null) {
+    private void resizeOSELock() {
+        Bitmap oseLock = BitmapFactory.decodeResource(getResources(), R.drawable.ose_lock);
+        if (oseLock != null) {
             String path = null;
             int px = requestImageSize();
-            slimLock = Bitmap.createScaledBitmap(slimLock, px, px, true);
+            oseLock = Bitmap.createScaledBitmap(oseLock, px, px, true);
             try {
                 mLockImage.createNewFile();
                 mLockImage.setWritable(true, false);
                 File image = new File(getActivity().getFilesDir() + File.separator
-                            + "slim_lock" + System.currentTimeMillis() + ".png");
+                            + "ose_lock" + System.currentTimeMillis() + ".png");
                 path = image.getAbsolutePath();
                 mLockImage.renameTo(image);
                 FileOutputStream outPut = new FileOutputStream(image);
-                slimLock.compress(Bitmap.CompressFormat.PNG, 100, outPut);
+                oseLock.compress(Bitmap.CompressFormat.PNG, 100, outPut);
                 image.setReadable(true, false);
                 outPut.flush();
                 outPut.close();

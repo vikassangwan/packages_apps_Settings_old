@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2012-2013 SlimRoms Project
+<!-- Copyright (C) 2014 OSE Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,7 +14,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="slim_center_title">Slim-Центр</string>
     <string name="quiet_hours_title">Тихие часы</string>
     <string name="quiet_hours_summary">Настройка часов, когда устройство должно быть тихим</string>
     <string name="quiet_hours_enabled">Включить тихие часы</string>
@@ -591,8 +590,8 @@
     <string name="reset_message">Сбросить все настройки по умолчанию?</string>
     <string name="style_title">Стиль</string>
     <string name="add">Добавить</string>
-    <string name="slim_version_title">Версия Slim</string>
-    <string name="slim_version_default">Неизвестно</string>
+    <string name="ose_version_title">Версия OSE</string>
+    <string name="ose_version_default">Неизвестно</string>
     <string name="notification_light_title">Индикатор уведомлений</string>
     <string name="notification_light_choose_app">Выбрать приложение</string>
     <string name="notification_light_add">Добавить</string>
@@ -689,7 +688,7 @@
     <string name="lockscreen_style_reset_message">Сбросить все цвета экрана блокировки?</string>
     <string name="lockscreen_icon_title">Значок ползунка блокировки</string>
     <string name="lockscreen_lock_icon_custom">Свой значок</string>
-    <string name="lockscreen_lock_icon_slim">Значок Slim</string>
+    <string name="lockscreen_lock_icon_ose">Значок OSE</string>
     <string name="lockscreen_lock_icon_default">Значок по умолчанию</string>
     <string name="lockscreen_colorize_handle_title">Цвет своего значка</string>
     <string name="lockscreen_colorize_handle_summary">Установить цвет блокировщика для значка блокировки</string>
@@ -724,7 +723,7 @@
     <string name="device_hostname">Имя хоста</string>
     <string name="device_settings_title">Устройство</string>
     <string name="title_tile_theme">Управление TRDS</string>
-    <string name="theme_settings_title">The Real Dark Slim</string>
+    <string name="theme_settings_title">OSE Theme</string>
     <string name="theme_auto_mode_title">Переключить тему</string>
     <string name="theme_auto_mode_off">Вручную</string>
     <string name="theme_auto_mode_lightsensor">При изменении освещения</string>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2012 Slimroms
+<!-- Copyright (C) 2014 OSE Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@
          android:title="@string/notif_alpha_title" />
 
      <PreferenceScreen
-             android:key="slim_notification_shortcuts"
+             android:key="ose_notification_shortcuts"
              android:fragment="com.android.settings.ose.dslv.ButtonsListViewSettings"
              android:summary="@string/notification_shortcuts_settings_summary"
              android:title="@string/notification_shortcuts_settings_title">

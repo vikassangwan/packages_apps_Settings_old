@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2012-2013 SlimRoms Project
+<!-- Copyright (C) 2014 OSE Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -29,10 +29,9 @@
     <!-- Settings main menu category heading. Rom (Launcher, Themes, System). [CHAR LIMIT=40] -->
     <string name="header_category_rom_settings">Advanced settings</string>
 
-    <!-- Slim settings screens -->
+    <!-- OSE settings screens -->
     <string name="interface_settings_title">Interface</string>
     <string name="navigation_settings_title">Navigation</string>
-    <string name="slim_center_title">SlimCenter</string>
     <!-- Advanced, Device specific (DeviceParts) settings  -->
     <string name="device_settings_title">Device</string>
 
@@ -45,9 +44,9 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">Set</string>
 
-    <!-- About phone screen, slim version -->
-    <string name="slim_version_title">Slim version</string>
-    <string name="slim_version_default">Unknown</string>
+    <!-- About phone screen, ose version -->
+    <string name="ose_version_title">OSE version</string>
+    <string name="ose_version_default">Unknown</string>
 
     <!-- Display settings screen, notification light settings -->
     <string name="display_category_light_options_title">Light options</string>
@@ -552,7 +551,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="navigation_bar_glow_tint_title">Glow color</string>
 
     <!-- Advanced settings -->
-    <string name="advanced_options_settings_title">Advanced options</string>
+    <string name="advanced_options_settings_title">Advanced</string>
 
     <!-- MediaScanner behavior on boot -->
     <string name="media_scanner_on_boot_title">MediaScanner behavior on boot</string>
@@ -694,7 +693,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="lockscreen_style_reset_message">Reset all lockscreen colors?</string>
     <string name="lockscreen_icon_title">Lock handle icon</string>
     <string name="lockscreen_lock_icon_custom">Custom icon</string>
-    <string name="lockscreen_lock_icon_slim">Slim icon</string>
+    <string name="lockscreen_lock_icon_ose">OSE icon</string>
     <string name="lockscreen_lock_icon_default">Default icon</string>
     <string name="lockscreen_colorize_handle_title">Colorize custom handle</string>
     <string name="lockscreen_colorize_handle_summary">Lock color will be set to the lock handle</string>

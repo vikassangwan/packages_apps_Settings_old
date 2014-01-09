@@ -1,6 +1,6 @@
 /*
  * Copyright 2012 Carl Bauer
- * Copyright (C) 2013 SlimRoms Project
+ * Copyright (C) 2014 OSE Project
  * This code has been modified. Portions copyright (C) 2012, ParanoidAndroid Project.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");

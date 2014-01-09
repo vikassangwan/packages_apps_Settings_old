@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2012-2013 SlimRoms Project
+<!-- Copyright (C) 2014 OSE Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -29,10 +29,9 @@
     <!-- Settings main menu category heading. Rom (Launcher, Themes, System). [CHAR LIMIT=40] -->
     <string name="header_category_rom_settings">Opciones avanzadas</string>
 
-    <!-- Slim settings screens -->
+    <!-- OSE settings screens -->
     <string name="interface_settings_title">Interfaz</string>
     <string name="navigation_settings_title">Navegación</string>
-    <string name="slim_center_title">SlimCenter</string>
     <!-- Advanced, Device specific (DeviceParts) settings  -->
     <string name="device_settings_title">Dispositivo</string>
 
@@ -45,9 +44,9 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">Establecer</string>
 
-    <!-- About phone screen, slim version -->
-    <string name="slim_version_title">Versión Slim</string>
-    <string name="slim_version_default">Desconocido</string>
+    <!-- About phone screen, ose version -->
+    <string name="ose_version_title">Versión OSE</string>
+    <string name="ose_version_default">Desconocido</string>
 
     <!-- Display settings screen, notification light settings -->
     <string name="display_category_light_options_title">Opciones del Led</string>
@@ -690,7 +689,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="lockscreen_style_reset_message">¿Restablecer todos los colores de la pantalla de bloqueo?</string>
     <string name="lockscreen_icon_title">Icono de desbloqueo</string>
     <string name="lockscreen_lock_icon_custom">Icono personalizado</string>
-    <string name="lockscreen_lock_icon_slim">Icono Slim</string>
+    <string name="lockscreen_lock_icon_ose">Icono OSE</string>
     <string name="lockscreen_lock_icon_default">Icono predeterminado</string>
     <string name="lockscreen_colorize_handle_title">Color personalizado</string>
     <string name="lockscreen_colorize_handle_summary">El color se aplicará al anillo de desbloqueo</string>
@@ -866,7 +865,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="stylus_icon_enabled_summary">Muestra un icono mientras se está usando el stylus</string>
 
     <!-- Themes -->
-    <string name="theme_settings_title">The real dark slim</string>
+    <string name="theme_settings_title">OSE Theme</string>
     <string name="theme_auto_mode_title">Cambiar tema</string>
     <string name="theme_auto_mode_off">Manual</string>
     <string name="theme_auto_mode_lightsensor">Al cambuir las condiciones de luz</string>

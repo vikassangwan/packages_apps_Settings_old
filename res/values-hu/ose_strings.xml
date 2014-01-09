@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2012-2013 SlimRoms Project
+<!-- Copyright (C) 2014 OSE Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -29,10 +29,9 @@
     <!-- Settings main menu category heading. Rom (Launcher, Themes, System). [CHAR LIMIT=40] -->
     <string name="header_category_rom_settings">Haladó beállítások</string>
 
-    <!-- Slim settings screens -->
+    <!-- OSE settings screens -->
     <string name="interface_settings_title">Interfész</string>
     <string name="navigation_settings_title">Navigáció</string>
-    <string name="slim_center_title">SlimCenter</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Szín választó</string>
@@ -43,9 +42,9 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">Beállítás</string>
 
-    <!-- About phone screen, slim version -->
-    <string name="slim_version_title">Slim verzió</string>
-    <string name="slim_version_default">Ismeretlen</string>
+    <!-- About phone screen, ose version -->
+    <string name="ose_version_title">OSE verzió</string>
+    <string name="ose_version_default">Ismeretlen</string>
 
     <!-- Display settings screen, notification light settings -->
     <string name="display_category_light_options_title">Fény beállítások</string>
@@ -686,7 +685,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="lockscreen_style_reset_message">Összes zárképernyő szín alaphelyzetbe?</string>
     <string name="lockscreen_icon_title">Zár fogantyú ikon</string>
     <string name="lockscreen_lock_icon_custom">Saját ikon</string>
-    <string name="lockscreen_lock_icon_slim">Slim ikon</string>
+    <string name="lockscreen_lock_icon_ose">OSE ikon</string>
     <string name="lockscreen_lock_icon_default">Alapértelmezett ikon</string>
     <string name="lockscreen_colorize_handle_title">Egyéni színezett fogantyú</string>
     <string name="lockscreen_colorize_handle_summary">Zár szín lesz beállítva a fogantyúhoz </string>
@@ -857,7 +856,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="stylus_icon_enabled_summary">Mutató ikon mutatása stílus használata közben</string>
 
     <!-- Themes -->
-    <string name="theme_settings_title">Az igazi fekete slim</string>
+    <string name="theme_settings_title">OSE Theme</string>
     <string name="theme_auto_mode_title">Téma váltás</string>
     <string name="theme_auto_mode_off">Kézi</string>
     <string name="theme_auto_mode_lightsensor">Fényviszonyok változtatása</string>

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 SlimRoms
+ * Copyright (C) 2014 OSE Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 
 import com.android.internal.util.ose.ButtonsConstants;
-import com.android.internal.util.ose.SlimActions;
+import com.android.internal.util.ose.OSEActions;
 
 import com.android.settings.R;
 
@@ -65,7 +65,7 @@ public class ThemeEnabler implements CompoundButton.OnCheckedChangeListener {
         if (mStateMachineEvent) {
             return;
         }
-        SlimActions.processAction(mContext, ButtonsConstants.ACTION_THEME_SWITCH, false);
+        OSEActions.processAction(mContext, ButtonsConstants.ACTION_THEME_SWITCH, false);
         setSwitchState();
     }
 
