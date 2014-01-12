@@ -1232,6 +1232,9 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="recent_clear_all_button_location_bottom_right">Bottom right</string>
 
     <!-- Lockscreen Notifications -->
+    <string name="general">General</string>
+    <string name="layout">Layout</string>
+    <string name="privacy">Privacy</string>
     <string name="lockscreen_notifications">Lockscreen notifications</string>
     <string name="lockscreen_notifications_summary">Show pending notifications on lockscreen</string>
     <string name="pocket_mode">Pocket mode</string>
@@ -1252,5 +1255,12 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="wake_on_notification_summary">Wake device when a new notification is received</string>
     <string name="notifications_height">Notification count</string>
     <string name="notifications_height_summary">Number of notifications displayed at once</string>
+    <string name="offset_top">Offset to the top of the screen:</string>
+    <string name="privacy_mode">Privacy Mode</string>
+    <string name="privacy_mode_summary">Disables notifications from beeing shown and dismissed. This way, you just see the icons of your notifications.</string>
+    <string name="dynamic_width">Dynamic width</string>
+    <string name="dynamic_width_summary">Sets the width of notifications dynamic, so that they only use the space they really need</string>
+    <string name="excluded_apps_title">Excluded applications</string>
+    <string name="excluded_apps_summary">Excluded applications will not show up as lockscreen notifications</string>
 
 </resources>
