@@ -1902,4 +1902,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Theme chooser -->
     <string name="themes_settings_title">Themes</string>
+
+    <!-- Notification Panel Shortcuts -->
+    <string name="notification_bar_shortcuts">Header shortcuts</string>
+    <string name="clock_shortcut_title">Time</string>
+    <string name="calendar_shortcut_title">Date</string>
+    <string name="default_shortcut">Default</string>
 </resources>
