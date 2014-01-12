@@ -1719,4 +1719,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="default_sound_pack">Default (System)</string>
     <string name="error_pack_install">Error while installing the sound pack</string>
 
+    <!-- Fast charge QS tile -->
+    <string name="title_tile_fcharge">Fast charge</string>
+
 </resources>
