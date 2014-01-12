@@ -40,4 +40,10 @@
         android:fragment="com.android.settings.ose.StatusBar"
         android:title="@string/status_bar_title" />
 
+    <Preference
+        android:key="misc_tweaks"
+        android:fragment="com.android.settings.ose.MiscTweaks"
+        android:layout="@layout/preference_misctweaks"
+        android:title="@string/misc_tweaks_title"/>
+
 </PreferenceScreen>
