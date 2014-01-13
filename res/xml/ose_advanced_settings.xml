@@ -45,10 +45,13 @@
         android:fragment="com.android.settings.ose.PropModder"/>
 
     <PreferenceScreen
+        android:fragment="com.android.settings.ose.BatterySaverSettings"
+        android:title="@string/battery_saver_title" />
+
+    <PreferenceScreen
         android:key="wakelock_blocker"
         android:fragment="com.android.settings.ose.fragments.WakeLockBlocker"
-        android:title="@string/wakelock_blocker"
-        android:summary="@string/wakelock_blocker_header_summary" />
+        android:title="@string/wakelock_blocker" />
 
     <PreferenceScreen
         android:key="devicesettings_app"
