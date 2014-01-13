@@ -1817,4 +1817,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="donate_ose_title">Support Team-OSE</string>
     <string name="donate_ose_summary">Donate to Team-OSE.</string>
     <string name="donate_link" formatted="false">https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=timpohladthomas%40gmail%2ecom&amp;lc=US&amp;item_name=Team%20OSE&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted</string>
+
+    <!-- Toggle switch title for enabling battery saver connections. [CHAR LIMIT=32] -->
+    <string name="data_usage_enable_batterysaver">Battery saver</string>
 </resources>
