@@ -23,29 +23,23 @@
         android:title="@string/superuser"
         android:fragment="com.koushikdutta.superuser.PolicyNativeFragment" />
 
-    <PreferenceCategory
-        android:key="advanced_settings_options_prefs"
-        android:title="@string/advanced_options_settings_title">
+    <ListPreference
+        android:key="media_scanner_on_boot"
+        android:title="@string/media_scanner_on_boot_title"
+        android:persistent="false"
+        android:entries="@array/media_scanner_on_boot_entries"
+        android:entryValues="@array/media_scanner_on_boot_values" />
 
-        <ListPreference
-            android:key="media_scanner_on_boot"
-            android:title="@string/media_scanner_on_boot_title"
-            android:persistent="false"
-            android:entries="@array/media_scanner_on_boot_entries"
-            android:entryValues="@array/media_scanner_on_boot_values" />
+    <PreferenceScreen
+        android:id="@+id/initD"
+        android:fragment="com.android.settings.ose.InitD"
+        android:title="@string/init_d_title"
+        android:summary="@string/header_summary_init_d" />
 
-        <PreferenceScreen
-            android:id="@+id/initD"
-            android:fragment="com.android.settings.ose.InitD"
-            android:title="@string/init_d_title"
-            android:summary="@string/header_summary_init_d" />
-
-        <PreferenceScreen
-            android:key="buildprop_modder"
-            android:title="@string/propmodder_title" 
-            android:fragment="com.android.settings.ose.PropModder"/>
-
-    </PreferenceCategory>
+    <PreferenceScreen
+        android:key="buildprop_modder"
+        android:title="@string/propmodder_title" 
+        android:fragment="com.android.settings.ose.PropModder"/>
 
     <PreferenceScreen
         android:key="devicesettings_app"
