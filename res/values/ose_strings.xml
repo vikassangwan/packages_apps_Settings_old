@@ -1552,6 +1552,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- QuickSettings Custom Tiles -->
     <string name="tile_weather">Weather</string>
+    <string name="internal_memory_tile">internal memory</string>
 
     <!-- Weather Tile Preference -->
     <string name="title_general">Weather Settings</string>
