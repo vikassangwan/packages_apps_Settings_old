@@ -29,6 +29,12 @@
         android:id="@+id/appops_settings" />
 
    <PreferenceScreen
+        android:id="@+id/system_app_remover"
+        android:fragment="com.android.settings.ose.SystemappRemover"
+        android:title="@string/system_app_remover_title"
+        android:summary="@string/system_app_remover_summary" />
+
+   <PreferenceScreen
         android:id="@+id/initD"
         android:fragment="com.android.settings.ose.InitD"
         android:title="@string/init_d_title"
@@ -36,7 +42,7 @@
 
     <PreferenceScreen
         android:key="buildprop_modder"
-        android:title="@string/propmodder_title" 
+        android:title="@string/propmodder_title"
         android:fragment="com.android.settings.ose.PropModder"/>
 
     <PreferenceScreen
@@ -49,7 +55,7 @@
         android:key="wakelock_blocker"
         android:fragment="com.android.settings.ose.fragments.WakeLockBlocker"
         android:title="@string/wakelock_blocker"
-        android:summary="@string/wakelock_blocker_header_summary" /> 
+        android:summary="@string/wakelock_blocker_header_summary" />
 
     <PreferenceScreen
         android:key="devicesettings_app"
