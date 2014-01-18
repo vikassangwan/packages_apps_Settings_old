@@ -51,4 +51,6 @@
     <color name="auto_brightness_preview_grid">#44ffffff</color>
 
     <color name="tab_selector">#FFFFFFFF</color>
+
+    <color name="halo_color">#ff33b5e5</color>
 </resources>

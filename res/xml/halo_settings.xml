@@ -41,6 +41,15 @@ limitations under the License.
 	android:dependency="halo_enabled"
         android:entryValues="@array/values_halo_size" />
 
+    <com.android.settings.colorpicker.ColorPickerPreference
+        android:key="halo_color"
+        android:dialogTitle="@string/halo_color_title"
+        android:title="@string/halo_color_title"
+        android:summary="@string/halo_color_summary"
+        android:defaultValue="@color/halo_color"
+        alphaSlider="true" 
+        hexValue="false" />
+
     <CheckBoxPreference
         android:key="halo_hide"
         android:title="@string/halo_hide_title"
