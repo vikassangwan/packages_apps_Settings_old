@@ -45,4 +45,9 @@
         android:title="@string/lockscreen_glowpad_torch_title"
         android:summary="@string/lockscreen_glowpad_torch_summary" />
 
+    <CheckBoxPreference
+        android:key="see_through"
+        android:title="@string/see_through_title"
+        android:summary="@string/see_through_summary" />
+
 </PreferenceScreen>
