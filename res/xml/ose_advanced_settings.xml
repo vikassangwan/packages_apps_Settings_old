@@ -28,14 +28,7 @@
         android:title="@string/appops_settings_title"
         android:id="@+id/appops_settings" />
 
-    <ListPreference
-        android:key="media_scanner_on_boot"
-        android:title="@string/media_scanner_on_boot_title"
-        android:persistent="false"
-        android:entries="@array/media_scanner_on_boot_entries"
-        android:entryValues="@array/media_scanner_on_boot_values" />
-
-    <PreferenceScreen
+   <PreferenceScreen
         android:id="@+id/initD"
         android:fragment="com.android.settings.ose.InitD"
         android:title="@string/init_d_title"
@@ -54,5 +47,12 @@
             android:targetPackage="com.cyanogenmod.settings.device"
             android:targetClass="com.cyanogenmod.settings.device.DeviceSettings" />
     </PreferenceScreen>
+
+    <ListPreference
+        android:key="media_scanner_on_boot"
+        android:title="@string/media_scanner_on_boot_title"
+        android:persistent="false"
+        android:entries="@array/media_scanner_on_boot_entries"
+        android:entryValues="@array/media_scanner_on_boot_values" />
 
 </PreferenceScreen>

@@ -706,7 +706,7 @@
     <!-- Main Settings screen setting option title for the item to take you to the location screen -->
     <string name="location_settings_title">Location</string>
     <!-- Main Settings screen setting option title for the item to take you to the security screen -->
-    <string name="security_settings_title">Security</string>
+    <string name="security_settings_title">Lockscreen/Security</string>
     <!-- Main Settings screen setting option summary text for the item tot ake you to the security and location screen -->
     <string name="security_settings_summary">Set My Location, screen unlock, SIM card lock, credential storage lock</string>
     <!-- Main Settings screen setting option summary text for the item to take you to the CDMA security and location screen -->
@@ -2615,7 +2615,7 @@
     <!-- Applications settings screen, setting check box summary. This is the summary for "App Check" checkbox. [CHAR LIMIT=none] -->
     <string name="verify_applications_summary">Disallow or warn before installation of apps that may cause harm</string>
     <!-- Applications settings screen, setting check box title. If checked, applications show more settings options. -->
-    <string name="advanced_settings">Advanced settings</string>
+    <string name="advanced_settings">Customization</string>
     <!-- Applications settings screen, setting check box summary.  This is the summary for "Advanced settings" checkbox  -->
     <string name="advanced_settings_summary">Enable more settings options</string>
     <!-- Manage applications, individual application info screen title. For example, if they click on "Browser" in "Manage applications", the title of the next screen will be this -->
@@ -3131,7 +3131,7 @@
     <string name="builtin_keyboard_settings_summary">Physical keyboard settings</string>
 
     <!-- Development Settings.  the title for the item to take the user to Development settings.  Development settings are settings meant for application developers.  -->
-    <string name="development_settings_title">Developer options</string>
+    <string name="development_settings_title">Developer Extras</string>
     <!-- Development Settings summary.  The summary of the item to take the user to Development settings.  Development settings are settings meant for application developers. -->
     <string name="development_settings_summary">Set options for app development</string>
     <!-- Setting checkbox title for Whether to enable USB debugging support on the phone. -->
