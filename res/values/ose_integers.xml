@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2008 The Android Open Source Project
 
@@ -15,14 +16,7 @@
 -->
 <resources>
 
-  <declare-styleable name="SeekBarPreference">
-        <attr name="minimum" format="integer" />
-        <attr name="unitsLeft" format="string" />
-        <attr name="unitsRight" format="string" />
-  </declare-styleable>
-
-  <declare-styleable name="SeekBarPreferenceCham">
-        <attr name="interval" format="integer" />
-  </declare-styleable>
+    <!-- Minimum prediction score required to pass a gesture as recognized -->
+    <integer name="min_gesture_prediction_score">2</integer>
 
 </resources>
