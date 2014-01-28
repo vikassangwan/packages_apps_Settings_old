@@ -363,7 +363,9 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="shortcut_action_back">Back</string>
     <string name="shortcut_action_recent">Recents</string>
     <string name="shortcut_action_lastapp">Last app</string>
-    <string name="shortcut_action_search">Search</string>
+    <string name="shortcut_action_assist">Search</string>
+    <string name="shortcut_action_search">Search in app</string>
+    <string name="shortcut_action_voice_search">Voice search</string>
     <string name="shortcut_action_screenshot">Screenshot</string>
     <string name="shortcut_action_menu">Menu</string>
     <string name="shortcut_action_ime">Open IME Switcher</string>
@@ -1067,6 +1069,31 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="dm_init_d_error">It looks like init.d isn\'t setup properly. Please contact your ROM developer.</string>
     <string name="db_exit">Exit</string>
 
+    <!-- Hardware keys -->
+    <string name="button_keys_title">Hardware Buttons</string>
+    <string name="keys_bindings_title">Key actions</string>
+    <string name="keys_enable_custom_title">Enable custom actions</string>
+    <string name="keys_enable_custom_summary">Enable custom hardware key actions</string>
+    <string name="keys_back_press_title">Back key</string>
+    <string name="keys_back_long_press_title">Back key (long press)</string>
+    <string name="keys_back_double_tap_title">Back key (double tap)</string>
+    <string name="keys_home_press_title">Home key</string>
+    <string name="keys_home_long_press_title">Home key (long press)</string>
+    <string name="keys_home_double_tap_title">Home key (double tap)</string>
+    <string name="keys_menu_press_title">Menu key</string>
+    <string name="keys_menu_long_press_title">Menu key (long press)</string>
+    <string name="keys_menu_double_tap_title">Menu key (double tap)</string>
+    <string name="keys_assist_press_title">Search key</string>
+    <string name="keys_assist_long_press_title">Search key (long press)</string>
+    <string name="keys_assist_double_tap_title">Search key (double tap)</string>
+    <string name="keys_app_switch_press_title">App switch key</string>
+    <string name="keys_app_switch_long_press_title">App switch key (long press)</string>
+    <string name="keys_app_switch_double_tap_title">App switch key (double tap)</string>
+    <string name="keys_action_normal">Normal press</string>
+    <string name="keys_action_long">Long press</string>
+    <string name="keys_action_double">Double tap</string>
+    <string name="no_home_key">You have no button assigned any more to the \"Home\" action!\n\nThis can make your device unusable!</string>
+
     <!-- Delete apn confirmation dialog message -->
     <string name="confirm_delete_apn">The APN will be deleted.</string>
 
@@ -1123,21 +1150,21 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!--AppOps-->
     <string name="appops_settings_title">App privacy</string>
 
-    <!-- Animation Controls -->  
-    <string name="title_animation_controls">Custom System Animations</string>  
-    <string name="activity_open_title">Activity Open Animation</string>  
-    <string name="activity_close_title">Activity Close Animation</string>  
-    <string name="task_open_title">Task Open Animation</string>  
-    <string name="task_close_title">Task Close Animation</string>  
-    <string name="task_move_to_front_title">Move To Front Animation</string>  
-    <string name="task_move_to_back_title">Move To Back Animation</string>  
-    <string name="wallpaper_open_title">Wallpaper Open Animation</string>  
-    <string name="wallpaper_close_title">Wallpaper Close Animation</string>  
-    <string name="wallpaper_intra_open_title">Wallpaper Intra Open Animation</string>  
-    <string name="wallpaper_intra_close_title">Wallpaper Intra Close Animation</string>  
-    <string name="animation_duration_title">Animation Duration</string>  
-    <string name="title_animation_no_override">Prevent App Overrides</string>  
-    <string name="summary_animation_no_override">Prevent apps from overriding transitions.</string>  
+    <!-- Animation Controls -->
+    <string name="title_animation_controls">Custom System Animations</string>
+    <string name="activity_open_title">Activity Open Animation</string>
+    <string name="activity_close_title">Activity Close Animation</string>
+    <string name="task_open_title">Task Open Animation</string>
+    <string name="task_close_title">Task Close Animation</string>
+    <string name="task_move_to_front_title">Move To Front Animation</string>
+    <string name="task_move_to_back_title">Move To Back Animation</string>
+    <string name="wallpaper_open_title">Wallpaper Open Animation</string>
+    <string name="wallpaper_close_title">Wallpaper Close Animation</string>
+    <string name="wallpaper_intra_open_title">Wallpaper Intra Open Animation</string>
+    <string name="wallpaper_intra_close_title">Wallpaper Intra Close Animation</string>
+    <string name="animation_duration_title">Animation Duration</string>
+    <string name="title_animation_no_override">Prevent App Overrides</string>
+    <string name="summary_animation_no_override">Prevent apps from overriding transitions.</string>
     <string name="animation_duration_default">Default</string>
     <string name="header_summary_animation">@null</string>
 
@@ -1173,5 +1200,22 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="wakelock_blocker_reload">Reload</string>
     <string name="wakelock_blocker_warning_title">Proceed with Caution</string>
     <string name="wakelock_blocker_warning">Blocking wakelocks have the potential to cause instability, crashes or data loss.</string>
+
+    <!-- security settings menu unlock -->
+    <string name="unlock_menu_unlock_title">Menu unlock</string>
+    <string name="unlock_menu_unlock_summary">Pressing the menu button unlocks the device</string>
+
+    <!-- Android debugging over WiFi -->
+    <string name="adb_over_network">ADB over network</string>
+    <string name="adb_over_network_summary">Enable TCP/IP debugging over network interfaces (Wi-Fi, USB networks).
+    This setting is reset on reboot</string>
+
+    <!-- Warning for Adb over Network -->
+    <string name="adb_over_network_warning">WARNING: When ADB over network is enabled, your phone is open for intrusions on all connected networks, including GSM data network!
+    \n\nOnly use this feature when you are connected on trusted networks.\n\nDo you really want to enable this function?</string>
+
+    <!-- USB Mass Storage -->
+    <string name="usb_mass_storage_title">Mass storage</string>
+    <string name="usb_mass_storage_summary">Enable USB mass storage</string>
 
 </resources>
