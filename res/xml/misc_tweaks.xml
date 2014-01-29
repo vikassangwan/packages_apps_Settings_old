@@ -21,10 +21,31 @@
             android:title="@string/lockscreen_notifications"
             android:fragment="com.android.settings.ose.LockscreenNotifications" />
 
-         <PreferenceScreen
+        <PreferenceScreen
+            android:key="notification_drawer_qs"
+            android:fragment="com.android.settings.ose.NotificationDrawerQsSettings"
+            android:title="@string/notification_drawer_qs_title" />
+
+        <PreferenceScreen
+            android:fragment="com.android.settings.ose.BatteryIconStyle"
+            android:key="battery_style_pref"
+            android:title="@string/battery_icon_title" />
+
+        <PreferenceScreen
+            android:key="status_bar"
+            android:fragment="com.android.settings.ose.StatusBar"
+            android:title="@string/status_bar_title" />
+
+        <PreferenceScreen
             android:key="recents_apps_panel"
             android:fragment="com.android.settings.ose.RecentsPanel"
             android:title="@string/recent_apps_panel_title" />
+
+         <ListPreference
+            android:key="lcd_density"
+            android:title="@string/custom_density_title"
+            android:entries="@array/lcd_density_entries"
+            android:entryValues="@array/lcd_density_entries" />
 
          <CheckBoxPreference
             android:key="disable_fc_notifications"
