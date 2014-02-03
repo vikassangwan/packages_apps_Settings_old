@@ -15,6 +15,11 @@
             android:summary="@string/header_summary_animation"
             android:fragment="com.android.settings.ose.fragments.AnimationControls" />
 
+       <PreferenceScreen
+            android:key="progressbar_settings"
+            android:fragment="com.android.settings.ose.ProgressBar"
+            android:title="@string/progressbar_title" />
+
        <ListPreference
             android:key="system_power_crt_mode"
             android:dialogTitle="@string/system_power_crt_mode_dialog_title"
