@@ -53,6 +53,18 @@
                 android:entryValues="@array/entryvalues_font_size"
                 android:dialogTitle="@string/dialog_title_font_size" />
 
+        <CheckBoxPreference
+                android:key="srec_enable_touches"
+                android:title="@string/srec_enable_touches_title"
+                android:summary="@string/srec_enable_touches_summary"
+                android:persistent="false" />
+
+        <CheckBoxPreference
+                android:key="srec_enable_mic"
+                android:title="@string/srec_enable_mic_title"
+                android:summary="@string/srec_enable_mic_summary"
+                android:persistent="false" />
+
         <PreferenceScreen
                 android:key="wifi_display"
                 android:title="@string/wifi_display_settings_title"

@@ -69,6 +69,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_WAKEUP_WHEN_PLUGGED_UNPLUGGED = "wakeup_when_plugged_unplugged";
     private static final String KEY_WAKEUP_CATEGORY = "category_wakeup_options";
     private static final String KEY_TOAST_ANIMATION = "toast_animation";
+    private static final String SREC_ENABLE_TOUCHES = "srec_enable_touches";
+    private static final String SREC_ENABLE_MIC = "srec_enable_mic";
 
     private static final int DLG_GLOBAL_CHANGE_WARNING = 1;
 
@@ -90,6 +92,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mWakeUpWhenPluggedOrUnplugged;
     private PreferenceCategory mWakeUpOptions;
     private ListPreference mToastAnimation;
+    private CheckBoxPreference mSrecEnableTouches;
+    private CheckBoxPreference mSrecEnableMic;
 
     private final Configuration mCurConfig = new Configuration();
 
@@ -246,6 +250,14 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 Settings.System.TOAST_ANIMATION, 1);
         mToastAnimation.setValueIndex(CurrentToastAnimation);
         mToastAnimation.setOnPreferenceChangeListener(this);
+
+        mSrecEnableTouches = (CheckBoxPreference) findPreference(SREC_ENABLE_TOUCHES);
+        mSrecEnableTouches.setChecked((Settings.System.getInt(resolver,
+                Settings.System.SREC_ENABLE_TOUCHES, 0) == 1));
+        mSrecEnableTouches.setOnPreferenceChangeListener(this);
+        mSrecEnableMic = (CheckBoxPreference) findPreference(SREC_ENABLE_MIC);
+        mSrecEnableMic.setChecked((Settings.System.getInt(resolver,
+                Settings.System.SREC_ENABLE_MIC, 0) == 1));
     }
 
     private void updateTimeoutPreferenceDescription(long currentTimeout) {
@@ -536,6 +548,16 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             mToastAnimation.setSummary(mToastAnimation.getEntries()[index]);
             Toast.makeText(getActivity(), "Toast animation test!!!",
                     Toast.LENGTH_SHORT).show();
+        }
+        if (SREC_ENABLE_TOUCHES.equals(key)) {
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.SREC_ENABLE_TOUCHES,
+                    (Boolean) objValue ? 1 : 0);
+        }
+        if (SREC_ENABLE_MIC.equals(key)) {
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.SREC_ENABLE_MIC,
+                    (Boolean) objValue ? 1 : 0);
         }
 
         return true;

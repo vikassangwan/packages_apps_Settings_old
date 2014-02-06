@@ -1701,4 +1701,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Custom Recent Settings -->
     <string name="custom_recent_title">Enable OSE Recents</string>
     <string name="custom_recent_summary">Tick this box to switch between OSE/Sense RecentApps</string>
+
+    <!-- Screen recorder settings -->
+    <string name="srec_enable_touches_title">Enable Pointer</string>
+    <string name="srec_enable_touches_summary">Enable visual pointer to show touches during screen recording</string>
+    <string name="srec_enable_mic_title">Use Microphone</string>
+    <string name="srec_enable_mic_summary">Use microphone as audio input during screen recording</string>
 </resources>
