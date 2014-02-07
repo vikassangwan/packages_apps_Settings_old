@@ -24,7 +24,7 @@
 
     <PreferenceScreen
         android:key="pref_battery_saver"
-        android:fragment="org.omnirom.omnigears.interfacesettings.BatterySaverSettings"
+        android:fragment="com.android.settings.ose.BatterySaverSettings"
         android:title="@string/battery_saver_title" />
 
     <ListPreference

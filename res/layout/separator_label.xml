@@ -17,5 +17,16 @@
 */
 -->
 
+<<<<<<< HEAD:res/layout/separator_label.xml
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
     style="?android:attr/listSeparatorTextViewStyle" />
+=======
+    <declare-styleable name="SeekBarPreference">
+        <attr name="min" format="integer" />
+        <attr name="interval" format="integer" />
+        <attr name="unitsLeft" format="string|reference" />
+        <attr name="unitsRight" format="string|reference" />
+    </declare-styleable>
+
+</resources>
+>>>>>>> 4642f0c... [3/3] OmniGears: Battery Saver Mode:res/values/custom_attrs.xml
