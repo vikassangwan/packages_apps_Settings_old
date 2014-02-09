@@ -96,6 +96,11 @@
             android:summary="@string/tile_picker_summary"
             android:fragment="com.android.settings.ose.quicksettings.QuickSettingsTiles" />
 
+        <PreferenceScreen
+            android:key="pref_weather"
+            android:title="@string/pref_weather_tile"
+            android:fragment="com.android.settings.ose.PrefWeatherTile" />
+
         <ListPreference
             android:key="quick_pulldown"
             android:title="@string/title_quick_pulldown"
