@@ -47,4 +47,8 @@
         android:fragment="com.android.settings.ose.PieControl"
         android:title="@string/pie_control_title" />
 
+    <PreferenceScreen
+        android:fragment="org.omnirom.omniswitch"
+        android:title="@string/omniswitch_title" />
+
 </PreferenceScreen>

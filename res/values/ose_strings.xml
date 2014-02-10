@@ -1320,4 +1320,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="pie_warning_no_navigation_present">No other navigation is currently enabled. Turning off pie controls can result in an unusable device. Do you want to enable navigation bar instead?</string>
     <string name="pie_trigger_warning">Minimum one of the main triggers (bottom, left or right) needs to be enabled.</string>
 
+    <!-- OmniSwitch -->
+    <string name="omniswitch_title">OmniSwitch</string>
 </resources>
