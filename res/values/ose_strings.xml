@@ -1463,4 +1463,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="custom_system_icon_color_title">Custom system icon color</string>
     <string name="system_icon_color">Icon color</string>
     <string name="custom_color_summary">Override the system color of the System UI</string>
+
+    <!-- Diable BootAnimation -->
+    <string name="pref_disable_bootanimation_title">Disable Boot Animation</string>
 </resources>
