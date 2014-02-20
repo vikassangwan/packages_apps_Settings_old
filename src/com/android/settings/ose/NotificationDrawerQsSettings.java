@@ -68,6 +68,8 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
             "tile_picker";
     private static final String PREF_QUICK_SETTINGS_TILES_FLIP =
             "quick_settings_tiles_flip";
+    private static final String STATUS_BAR_CUSTOM_HEADER =
+            "custom_status_bar_header";
 
     ListPreference mHideLabels;
     SeekBarPreference mNotificationAlpha;
@@ -79,6 +81,8 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
     ListPreference mSmartPulldown;
     CheckBoxPreference mCollapsePanel;
     CheckBoxPreference mTileFlip;
+
+    private CheckBoxPreference mStatusBarCustomHeader;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -94,6 +98,11 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
         mHideLabels.setValue(String.valueOf(hideCarrier));
         mHideLabels.setOnPreferenceChangeListener(this);
         updateHideNotificationLabelsSummary(hideCarrier);
+
+        mStatusBarCustomHeader = (CheckBoxPreference) findPreference(STATUS_BAR_CUSTOM_HEADER);
+        mStatusBarCustomHeader.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.STATUS_BAR_CUSTOM_HEADER, 0) == 1);
+        mStatusBarCustomHeader.setOnPreferenceChangeListener(this);
 
         PackageManager pm = getPackageManager();
         boolean isMobileData = pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY);
@@ -270,6 +279,11 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
             Settings.System.putIntForUser(getContentResolver(),
                     Settings.System.QUICK_SETTINGS_TILES_FLIP,
                     (Boolean) newValue ? 1 : 0, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mStatusBarCustomHeader) {
+            boolean value = (Boolean) objValue;
+            Settings.System.putInt(getContentResolver(),
+                Settings.System.STATUS_BAR_CUSTOM_HEADER, value ? 1 : 0);
             return true;
         }
         return false;

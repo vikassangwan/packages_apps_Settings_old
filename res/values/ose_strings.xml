@@ -1694,4 +1694,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="recent_panel_lefty_mode_title">Show on the left edge</string>
     <string name="recent_panel_lefty_mode_summary">Show recent apps panel on the left edge.</string>
 
+    <!-- Custom notification panel header -->
+    <string name="custom_statusbar_header_title">Contextual notification panel header</string>
+    <string name="custom_statusbar_header_summary">Sets the background of the notification panel header to an image based on the current date and time</string>
+
 </resources>
