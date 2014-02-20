@@ -1409,7 +1409,12 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="toast_GrowFadeBottom_animation">GrowFadeBottom Animation</string>
     <string name="toast_Translucent_animation">Translucent Animation</string>
 
+    <!-- Themes title-->
+    <string name="themes_settings_title">Themes</string>
+
     <!-- Smooth ProgressBar -->
+    <string name="ram_bar_button_reset">Reset colors</string>
+    <string name="ram_bar_reset">Reset</string>
     <string name="progressbar_title">Custom ProgressBar</string>
     <string name="progressbar_mirror_title">Mirror Mode</string>
     <string name="progressbar_reverse_title">Reversed</string>
