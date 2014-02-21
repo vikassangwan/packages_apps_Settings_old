@@ -908,7 +908,7 @@
     <string name="pie_button_style_summary">Изменить стиль кнопок</string>
     <string name="pie_style_reset_message">Сбросить стили к значениям по умолчанию?</string>
 
-    <string name="slim_shortcut_picker">Действия Slim</string>
+    <string name="ose_shortcut_picker">Действия OSE</string>
     <string name="shortcut_action_navbar">Строка навигации</string>
     <string name="shortcut_action_pie">Управление pie</string>
     <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Удаление последнего %1$s отключит весь второй уровень pie.</string>

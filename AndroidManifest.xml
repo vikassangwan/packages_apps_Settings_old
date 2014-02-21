@@ -197,6 +197,7 @@
         <activity
             android:name=".ose.OSEActionShortcut"
             android:theme="@android:style/Theme.NoDisplay"
+            android:icon="@drawable/ose_lock"
             android:excludeFromRecents="true"
             android:launchMode="singleInstance" >
             <intent-filter>
