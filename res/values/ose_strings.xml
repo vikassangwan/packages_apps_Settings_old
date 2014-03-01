@@ -1722,4 +1722,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Fast charge QS tile -->
     <string name="title_tile_fcharge">Fast charge</string>
 
+    <!-- Hide battery icon -->
+    <string name="hide_battery_icon_title">Hide battery icon</string>
+    <string name="hide_battery_icon_summary">Hides the battery icon in the status bar</string>
+
 </resources>
