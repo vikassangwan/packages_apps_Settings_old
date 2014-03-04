@@ -35,15 +35,19 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.android.internal.util.ose.DeviceUtils;
 
+import com.android.settings.ose.util.Helpers;
+
 public class RecentsPanel extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
     private static final String TAG = "RecentsPanelSettings";
 
     private static final String RECENT_MENU_CLEAR_ALL = "recent_menu_clear_all";
     private static final String RECENT_MENU_CLEAR_ALL_LOCATION = "recent_menu_clear_all_location";
+    private static final String CUSTOM_RECENT_MODE = "custom_recent_mode";
 
     private CheckBoxPreference mRecentClearAll;
     private ListPreference mRecentClearAllPosition;
+    private CheckBoxPreference mRecentsCustom;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -63,6 +67,12 @@ public class RecentsPanel extends SettingsPreferenceFragment implements OnPrefer
              mRecentClearAllPosition.setValue(recentClearAllPosition);
         }
         mRecentClearAllPosition.setOnPreferenceChangeListener(this);
+
+        boolean enableRecentsCustom = Settings.System.getBoolean(getActivity().getContentResolver(),
+                                      Settings.System.CUSTOM_RECENT, false);
+        mRecentsCustom = (CheckBoxPreference) findPreference(CUSTOM_RECENT_MODE);
+        mRecentsCustom.setChecked(enableRecentsCustom);
+        mRecentsCustom.setOnPreferenceChangeListener(this);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -72,6 +82,12 @@ public class RecentsPanel extends SettingsPreferenceFragment implements OnPrefer
             return true;
         } else if (preference == mRecentClearAllPosition) {
             Settings.System.putString(getContentResolver(), Settings.System.CLEAR_RECENTS_BUTTON_LOCATION, (String) newValue);
+            return true;
+        } else if (preference == mRecentsCustom) { // Enable||disable Slim Recent
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.CUSTOM_RECENT,
+                    ((Boolean) newValue) ? true : false);
+            Helpers.restartSystemUI();
             return true;
         } else {
         return false;

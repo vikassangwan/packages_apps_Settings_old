@@ -281,7 +281,7 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
                     (Boolean) newValue ? 1 : 0, UserHandle.USER_CURRENT);
             return true;
         } else if (preference == mStatusBarCustomHeader) {
-            boolean value = (Boolean) objValue;
+            boolean value = (Boolean) newValue;
             Settings.System.putInt(getContentResolver(),
                 Settings.System.STATUS_BAR_CUSTOM_HEADER, value ? 1 : 0);
             return true;
