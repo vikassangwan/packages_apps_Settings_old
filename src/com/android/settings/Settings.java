@@ -630,14 +630,22 @@ public class Settings extends PreferenceActivity
                 if (um.hasUserRestriction(UserManager.DISALLOW_MODIFY_ACCOUNTS)) {
                     target.remove(i);
                 }
+            } else if (id == R.id.kernel_tweaker) {
+                // Embedding into Settings only if app exists (user could manually remove it)
+                boolean supported = false;
+                try {
+                    supported = (getPackageManager().getPackageInfo("com.dsht.kerneltweaker", 0).versionCode >= 18);
+                } catch (PackageManager.NameNotFoundException e) {
+                }
+                if (!supported) {
+                    target.remove(i);
+                }
             }
-
             if (i < target.size() && target.get(i) == header
                     && UserHandle.MU_ENABLED && UserHandle.myUserId() != 0
                     && !ArrayUtils.contains(SETTINGS_FOR_RESTRICTED, id)) {
                 target.remove(i);
-            }
-
+            	}
             // Increment if the current one wasn't removed by the Utils code.
             if (i < target.size() && target.get(i) == header) {
                 // Hold on to the first header, when we need to reset to the top-level
@@ -1171,5 +1179,4 @@ public class Settings extends PreferenceActivity
     public static class QuickSettingsTilesSettingsActivity extends Settings { /* empty */ }
     public static class BatteryIconStyleSettingsActivity extends Settings { /* empty */ }
     public static class DisplayRotationSettingsActivity extends Settings { /* empty */ }
-    public static class PerformanceSettingsActivity extends Settings { /* empty */ }
 }

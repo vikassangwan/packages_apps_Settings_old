@@ -98,10 +98,14 @@
 
     <!-- Performance -->
     <header
-        android:id="@+id/performance_controls"
-        android:fragment="com.brewcrewfoo.performance.activities.MainActivity"
-        android:icon="@drawable/ic_ose_performance"
-        android:title="@string/performance_settings_title" />
+        android:id="@+id/kernel_tweaker"
+        android:title="@string/kernel_tweaker_title"
+        android:icon="@drawable/ic_ose_performance" >
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetClass="com.dsht.kerneltweaker.MainActivity"
+            android:targetPackage="com.dsht.kerneltweaker" />
+    </header>
 
     <!-- Development -->
     <header
