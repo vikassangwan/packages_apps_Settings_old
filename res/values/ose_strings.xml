@@ -1807,7 +1807,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="time_ten_to">Ten till</string>
     <string name="time_five_to">Five till</string>
 
-    <!-- LiquidSmooth Anonymous Stats -->
+    <!-- Anonymous stats -->
     <string name="rominfo_settings_list_item_title">OSE Statistics</string>
+    <string name="rominfo_settings_list_item_summary">Help make OSE better by opting into anonymous statistics reporting</string>
 
 </resources>

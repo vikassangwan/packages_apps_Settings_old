@@ -19,7 +19,8 @@
 
        <!-- OSE Anonymous Stats -->
        <PreferenceScreen android:key="rominfo_settings"
-            android:title="@string/rominfo_settings_list_item_title">
+            android:title="@string/rominfo_settings_list_item_title"
+            android:summary="@string/rominfo_settings_list_item_summary">
             <intent android:action="android.intent.action.MAIN"
                     android:targetPackage="android.romstats"
                     android:targetClass="android.romstats.AnonymousStats" />
