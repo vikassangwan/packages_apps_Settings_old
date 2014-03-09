@@ -32,6 +32,11 @@
             android:title="@string/app_sidebar_title" />
 
         <PreferenceScreen
+            android:key="gesture_anywhere"
+            android:fragment="com.android.settings.ose.gestureanywhere.GestureAnywhereSettings"
+            android:title="@string/gesture_anywhere_title" />
+
+        <PreferenceScreen
             android:key="lock_clock"
             android:title="@string/lock_clock_title"
             android:summary="@string/lock_clock_summary">

@@ -1747,6 +1747,10 @@
 
         <activity android:name=".ose.AppSidebar" />
 
+        <activity android:name=".ose.gestureanywhere.GestureAnywhereBuilderActivity" />
+
+        <activity android:name=".ose.gestureanywhere.GestureAnywhereCreateGestureActivity" />
+
         <activity android:name=".ApnEditor" />
 
          <!-- "Blacklist settings" UI, used only on voice-capable phone devices. -->
