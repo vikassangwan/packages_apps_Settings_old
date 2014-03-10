@@ -20,8 +20,10 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 
 import com.android.internal.util.ose.OSEActions;
+import com.android.internal.util.ose.ButtonsConstants;
 
 public class OSEActionShortcut extends Activity  {
 
@@ -34,7 +36,12 @@ public class OSEActionShortcut extends Activity  {
     public void onResume() {
         super.onResume();
         String value = getIntent().getStringExtra("value");
-        OSEActions.processAction(this, value, false);
+        if (ButtonsConstants.ACTION_RECENTS.equals(value)) {
+            OSEActions.triggerVirtualKeypress(
+                    KeyEvent.KEYCODE_APP_SWITCH, false);
+        } else {
+            OSEActions.processAction(this, value, false);
+        }
         this.finish();
     }
 }
