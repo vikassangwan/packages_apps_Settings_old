@@ -1565,4 +1565,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- OnClick Fliptile animation -->
     <string name="flip_qs_tiles_title">Flip tiles</string>
     <string name="flip_qs_tiles_summary">Flips the tiles on touch</string>
+
+    <!-- Clock widget -->
+    <string name="lock_clock_title">Clock widget</string>
+    <string name="lock_clock_summary">Change home or lock screen widget display</string>
 </resources>
