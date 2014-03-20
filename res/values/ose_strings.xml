@@ -1707,4 +1707,13 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="srec_enable_touches_summary">Enable visual pointer to show touches during screen recording</string>
     <string name="srec_enable_mic_title">Use Microphone</string>
     <string name="srec_enable_mic_summary">Use microphone as audio input during screen recording</string>
+
+    <!-- Sound themes -->
+    <string name="sound_packages_title">Sound packs</string>
+    <string name="install_sound_pack_title">Install sound pack</string>
+    <string name="install_sound_pack_summary">Install new sound packs added in SoundPacks folder on the internal storage</string>
+    <string name="select_sound_pack_title">Select sound pack</string>
+    <string name="select_sound_pack_summary">Select the active sound pack</string>
+    <string name="default_sound_pack">Default (System)</string>
+    <string name="error_pack_install">Error while installing the sound pack</string>
 </resources>
