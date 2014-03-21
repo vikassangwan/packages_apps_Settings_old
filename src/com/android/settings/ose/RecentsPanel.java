@@ -41,12 +41,8 @@ public class RecentsPanel extends SettingsPreferenceFragment implements OnPrefer
 
     private static final String TAG = "RecentsPanelSettings";
 
-    private static final String RECENT_MENU_CLEAR_ALL = "recent_menu_clear_all";
-    private static final String RECENT_MENU_CLEAR_ALL_LOCATION = "recent_menu_clear_all_location";
     private static final String CUSTOM_RECENT_MODE = "custom_recent_mode";
 
-    private CheckBoxPreference mRecentClearAll;
-    private ListPreference mRecentClearAllPosition;
     private CheckBoxPreference mRecentsCustom;
 
     @Override
@@ -57,17 +53,6 @@ public class RecentsPanel extends SettingsPreferenceFragment implements OnPrefer
 
         PreferenceScreen prefSet = getPreferenceScreen();
 
-        mRecentClearAll = (CheckBoxPreference) prefSet.findPreference(RECENT_MENU_CLEAR_ALL);
-        mRecentClearAll.setChecked(Settings.System.getInt(getContentResolver(),
-            Settings.System.SHOW_CLEAR_RECENTS_BUTTON, 1) == 1);
-        mRecentClearAll.setOnPreferenceChangeListener(this);
-        mRecentClearAllPosition = (ListPreference) prefSet.findPreference(RECENT_MENU_CLEAR_ALL_LOCATION);
-        String recentClearAllPosition = Settings.System.getString(getContentResolver(), Settings.System.CLEAR_RECENTS_BUTTON_LOCATION);
-        if (recentClearAllPosition != null) {
-             mRecentClearAllPosition.setValue(recentClearAllPosition);
-        }
-        mRecentClearAllPosition.setOnPreferenceChangeListener(this);
-
         boolean enableRecentsCustom = Settings.System.getBoolean(getActivity().getContentResolver(),
                                       Settings.System.CUSTOM_RECENT, false);
         mRecentsCustom = (CheckBoxPreference) findPreference(CUSTOM_RECENT_MODE);
@@ -76,14 +61,7 @@ public class RecentsPanel extends SettingsPreferenceFragment implements OnPrefer
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mRecentClearAll) {
-            Settings.System.putInt(getContentResolver(), Settings.System.SHOW_CLEAR_RECENTS_BUTTON,
-                    (Boolean) newValue ? 1 : 0);
-            return true;
-        } else if (preference == mRecentClearAllPosition) {
-            Settings.System.putString(getContentResolver(), Settings.System.CLEAR_RECENTS_BUTTON_LOCATION, (String) newValue);
-            return true;
-        } else if (preference == mRecentsCustom) { // Enable||disable Slim Recent
+        if (preference == mRecentsCustom) { // Enable||disable Slim Recent
             Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.CUSTOM_RECENT,
                     ((Boolean) newValue) ? true : false);
