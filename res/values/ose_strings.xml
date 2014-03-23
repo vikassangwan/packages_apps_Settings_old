@@ -1469,6 +1469,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="custom_system_icon_color_title">Custom system icon color</string>
     <string name="system_icon_color">Icon color</string>
     <string name="custom_color_summary">Override the system color of the System UI</string>
+    <string name="custom_status_bar_apply_title">Apply</string>
+    <string name="custom_status_bar_apply_summary">Restart SystemUI to apply the changes</string>
 
     <!-- Diable BootAnimation -->
     <string name="pref_disable_bootanimation_title">Disable Boot Animation</string>
@@ -1716,4 +1718,5 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="select_sound_pack_summary">Select the active sound pack</string>
     <string name="default_sound_pack">Default (System)</string>
     <string name="error_pack_install">Error while installing the sound pack</string>
+
 </resources>
