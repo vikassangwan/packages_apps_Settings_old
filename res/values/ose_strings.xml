@@ -1280,7 +1280,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="excluded_apps_summary">Excluded applications will not show up as lockscreen notifications</string>
 
     <!-- Pie Control -->
-    <string name="pie_control_title">OSEPIE</string>
+    <string name="pie_control_title">OSE-Pie</string>
     <string name="pie_control_summary">Enable pie controls</string>
     <string name="pie_control_size">Navigation size</string>
     <string name="pie_control_trigger_positions">Trigger options</string>

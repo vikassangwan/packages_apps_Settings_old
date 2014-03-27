@@ -25,8 +25,7 @@
         <PreferenceScreen
             android:key="active_display"
             android:fragment="com.android.settings.ose.ActiveDisplaySettings"
-            android:title="@string/ad_settings_title"
-            android:summary="@string/ad_settings_summary" />
+            android:title="@string/ad_settings_title" />
 
         <PreferenceScreen
             android:title="@string/lockscreen_notifications"
@@ -69,7 +68,6 @@
          <CheckBoxPreference
             android:key="disable_fc_notifications"
             android:title="@string/disable_fc_notifications_title"
-            android:summary="@string/disable_fc_notifications_summary"
             android:persistent="false" />
 
 </PreferenceScreen>

@@ -31,8 +31,7 @@
    <PreferenceScreen
         android:id="@+id/system_app_remover"
         android:fragment="com.android.settings.ose.SystemappRemover"
-        android:title="@string/system_app_remover_title"
-        android:summary="@string/system_app_remover_summary" />
+        android:title="@string/system_app_remover_title" />
 
    <PreferenceScreen
         android:id="@+id/initD"
