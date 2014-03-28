@@ -1811,4 +1811,11 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="rominfo_settings_list_item_title">OSE Statistics</string>
     <string name="rominfo_settings_list_item_summary">Help make OSE better by opting into anonymous statistics reporting</string>
 
+    <!-- Circle App Launcher -->
+    <string name="category_app_circle_bar_title">App launcher</string>
+    <string name="app_circle_bar_title">App circle bar</string>
+    <string name="app_circle_bar_summary">Show circle app launcher after touching right side of screen</string>
+    <string name="app_circle_bar_included_apps_title">Included apps</string>
+    <string name="app_circle_bar_included_apps_summary">Apps will show in app circle bar</string>
+
 </resources>

@@ -17,6 +17,20 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/misc_tweaks_title" >
 
+        <PreferenceCategory
+            android:key="category_app_circle_bar"
+            android:title="@string/category_app_circle_bar_title"/>
+
+        <com.android.settings.ose.SystemCheckBoxPreference
+            android:key="enable_app_circle_bar"
+            android:title="@string/app_circle_bar_title" />
+
+        <com.android.settings.ose.AppMultiSelectListPreference
+            android:key="app_circle_bar_included_apps"
+            android:persistent="false"
+            android:title="@string/app_circle_bar_included_apps_title"
+            android:dependency="enable_app_circle_bar" />
+
         <PreferenceScreen
             android:key="interface_voice_tts"
             android:fragment="com.android.settings.ose.DrivingMode"

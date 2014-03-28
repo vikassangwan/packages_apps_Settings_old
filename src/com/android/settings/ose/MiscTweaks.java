@@ -27,6 +27,8 @@ import android.app.admin.DeviceAdminReceiver;
 import android.app.admin.DevicePolicyManager;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.ResolveInfo;
 import android.content.res.Configuration;
 import android.content.ContentResolver;
@@ -51,15 +53,20 @@ import android.view.View;
 import android.widget.EditText;
 import android.preference.SeekBarPreference;
 import android.provider.Settings;
+import android.text.TextUtils;
 
 import com.android.internal.widget.LockPatternUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
+import com.android.settings.ose.AppMultiSelectListPreference;
+import com.android.internal.util.ose.DeviceUtils;
 
 import java.lang.Thread;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class MiscTweaks extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
@@ -69,10 +76,12 @@ public class MiscTweaks extends SettingsPreferenceFragment implements OnPreferen
     private static final String KEY_LCD_DENSITY = "lcd_density";
     private static final int DIALOG_CUSTOM_DENSITY = 101;
     private static final String DENSITY_PROP = "persist.sys.lcd_density";
+    private static final String PREF_INCLUDE_APP_CIRCLE_BAR_KEY = "app_circle_bar_included_apps";
 
     private static ListPreference mLcdDensity;
     private static Activity mActivity;
 
+    private AppMultiSelectListPreference mIncludedAppCircleBar;
     private CheckBoxPreference mDisableFC;
 
     @Override
@@ -88,6 +97,7 @@ public class MiscTweaks extends SettingsPreferenceFragment implements OnPreferen
         setPreferenceScreen(null);
         addPreferencesFromResource(R.xml.misc_tweaks);
 
+        PreferenceScreen prefSet = getPreferenceScreen();
         final ContentResolver resolver = getActivity().getContentResolver();
 
         mDisableFC = (CheckBoxPreference) findPreference(DISABLE_FC_NOTIFICATIONS);
@@ -107,6 +117,11 @@ public class MiscTweaks extends SettingsPreferenceFragment implements OnPreferen
         mLcdDensity.setSummary(getResources().getString(R.string.current_lcd_density) + current);
         mLcdDensity.setOnPreferenceChangeListener(this);
 
+        mIncludedAppCircleBar = (AppMultiSelectListPreference) prefSet.findPreference(PREF_INCLUDE_APP_CIRCLE_BAR_KEY);
+        Set<String> includedApps = getIncludedApps();
+        if (includedApps != null) mIncludedAppCircleBar.setValues(includedApps);
+        mIncludedAppCircleBar.setOnPreferenceChangeListener(this);
+
     }
 
     @Override
@@ -125,6 +140,7 @@ public class MiscTweaks extends SettingsPreferenceFragment implements OnPreferen
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
+    @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mLcdDensity) {
             String density = (String) newValue;
@@ -136,8 +152,33 @@ public class MiscTweaks extends SettingsPreferenceFragment implements OnPreferen
                 }
             }
             return true;
+        } else if (preference == mIncludedAppCircleBar) {
+            storeIncludedApps((Set<String>) newValue);
+        } else {
+            return false;
         }
-        return false;
+        return true;
+    }
+
+    private Set<String> getIncludedApps() {
+        String included = Settings.System.getString(getActivity().getContentResolver(),
+                Settings.System.WHITELIST_APP_CIRCLE_BAR);
+        if (TextUtils.isEmpty(included)) {
+            return null;
+        }
+        return new HashSet<String>(Arrays.asList(included.split("\\|")));
+    }
+
+    private void storeIncludedApps(Set<String> values) {
+        StringBuilder builder = new StringBuilder();
+        String delimiter = "";
+        for (String value : values) {
+            builder.append(delimiter);
+            builder.append(value);
+            delimiter = "|";
+        }
+        Settings.System.putString(getActivity().getContentResolver(),
+                Settings.System.WHITELIST_APP_CIRCLE_BAR, builder.toString());
     }
 
     private static void setDensity(int density) {
