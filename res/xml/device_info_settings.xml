@@ -17,6 +17,9 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         android:title="@string/about_settings">
 
+       <PreferenceScreen android:key="logo"
+                         android:layout="@layout/ose_logo" />
+
        <!-- OSE Anonymous Stats -->
        <PreferenceScreen android:key="rominfo_settings"
             android:title="@string/rominfo_settings_list_item_title"

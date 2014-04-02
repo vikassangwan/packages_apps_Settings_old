@@ -1824,4 +1824,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="category_lockscreen_features_title">Lockscreen</string>
     <string name="category_misc_title">Miscellaneous</string>
 
+    <!-- OSE Logo -->
+    <string name="logo_link" formatted="false">https://www/drdevs.com/subs/ose/</string>
+
 </resources>
