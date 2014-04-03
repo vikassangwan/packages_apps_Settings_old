@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012 The CyanogenMod Project
+ * Copyright (C) 2012 The ose Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import com.android.settings.hardware.DisplayColor;
 import com.android.settings.hardware.DisplayGamma;
 import com.android.settings.hardware.VibratorIntensity;
 import com.android.settings.location.LocationSettings;
+import com.android.settings.ose.BatterySaverHelper;
 
 import java.util.Arrays;
 import java.util.List;
@@ -53,9 +54,7 @@ public class BootReceiver extends BroadcastReceiver {
             }
         }
 
-        if (BatterySaverHelper.deviceSupportsMobileData(ctx)) {
             BatterySaverHelper.scheduleService(ctx);
-        }
 
         /* Restore the hardware tunable values */
         DisplayColor.restore(ctx);
