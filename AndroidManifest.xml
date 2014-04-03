@@ -1812,6 +1812,16 @@
 
         <activity android:name=".util.ShowBuildProp" />
 
+        <receiver
+            android:name="com.android.settings.ose.BatterySaverReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED"></action>
+                <action android:name="android.intent.action.TIME_CHANGED"></action>
+                <action android:name="android.intent.action.DATE_CHANGED"></action>
+                <action android:name="com.android.settings.ose.SCHEDULE_BATTERY_SAVER"/>
+            </intent-filter>
+        </receiver>
+
         <activity
             android:name=".ose.fragments.WakeLockBlocker"
             android:label="@string/wakelock_blocker" >
