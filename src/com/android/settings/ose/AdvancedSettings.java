@@ -28,7 +28,6 @@ import android.preference.Preference.OnPreferenceChangeListener;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.ose.BatterySaverHelper;
 
 import java.util.List;
 
@@ -37,30 +36,21 @@ public class AdvancedSettings extends SettingsPreferenceFragment
 
     private static final String PREF_MEDIA_SCANNER_ON_BOOT = "media_scanner_on_boot";
     private static final String PREF_DEVICESETTINGS_APP = "devicesettings_app";
-    private static final String BATTERY_SAVER = "interface_battery_saver";
 
     private PreferenceScreen mDeviceSettingsApp;
     private ListPreference mMsob;
-    private PreferenceScreen mBatterySaver;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.ose_advanced_settings);
-        Context context = getActivity();
 
         mMsob = (ListPreference) findPreference(PREF_MEDIA_SCANNER_ON_BOOT);
         mMsob.setValue(String.valueOf(Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.MEDIA_SCANNER_ON_BOOT, 0)));
         mMsob.setSummary(mMsob.getEntry());
         mMsob.setOnPreferenceChangeListener(this);
-
-        // Battery Saver
-        mBatterySaver = (PreferenceScreen) prefSet.findPreference(BATTERY_SAVER);
-        if (!BatterySaverHelper.deviceSupportsMobileData(context)) {
-            prefSet.removePreference(mBatterySaver);
-        }
 
         mDeviceSettingsApp = (PreferenceScreen) findPreference(PREF_DEVICESETTINGS_APP);
 
