@@ -53,9 +53,7 @@ public class CreateShortcut extends LauncherActivity {
     private int getProperShortcutIcon(String className) {
         String c = className.substring(className.lastIndexOf(".") + 1);
 
-        if (c.equals("ScreenStateToggles"))
-            return R.drawable.ic_screen_state;
-        else if (c.equals("WakeLockBlocker"))
+        if (c.equals("WakeLockBlocker"))
             return R.drawable.ic_wakelock_blocker;
         else
             return R.mipmap.ic_launcher;
