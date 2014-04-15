@@ -1674,7 +1674,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Recent panel -->
     <string name="recent_apps_panel_title" >Recents Apps Panel</string>
-    <string name="recent_panel_category">Recent apps panel</string>
+    <string name="recent_switcher_title" >Recents Apps Switcher</string>
+    <string name="recent_panel_category">Recents Customization</string>
     <string name="recent_panel_scale_title">Size</string>
     <string name="recent_panel_scale_summary">Recent apps panel size in percent.</string>
     <string name="recent_panel_100">100% (default)</string>
@@ -1905,7 +1906,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Notification Panel Shortcuts -->
     <string name="notification_bar_shortcuts">Header shortcuts</string>
-    <string name="clock_shortcut_title">Time</string>
-    <string name="calendar_shortcut_title">Date</string>
+    <string name="clock_shortcut_title">Time Shortcut</string>
+    <string name="calendar_shortcut_title">Date Shortcut</string>
     <string name="default_shortcut">Default</string>
 </resources>
