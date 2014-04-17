@@ -1,3 +1,19 @@
+/*
+ * Copyright (C) 2013 The OSE Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.android.settings.ose.fragments;
 
 import android.app.Activity;
@@ -17,7 +33,10 @@ import com.android.internal.util.ose.AwesomeAnimationHelper;
 
 import java.util.Arrays;
 
-public class AnimationControls extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
+public class AnimationControls extends SettingsPreferenceFragment
+        implements OnPreferenceChangeListener {
+
+    private static final String TAG = "AnimationControls";
 
     private static final String ACTIVITY_OPEN = "activity_open";
     private static final String ACTIVITY_CLOSE = "activity_close";
@@ -52,11 +71,12 @@ public class AnimationControls extends SettingsPreferenceFragment implements OnP
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTitle(R.string.title_animation_controls);
+
         // Load the preferences from an XML resource
-        addPreferencesFromResource(R.xml.prefs_animation_controls);
+        addPreferencesFromResource(R.xml.animation_controls);
 
         PreferenceScreen prefs = getPreferenceScreen();
+
         mAnimations = AwesomeAnimationHelper.getAnimationsList();
         int animqty = mAnimations.length;
         mAnimationsStrings = new String[animqty];
@@ -136,85 +156,70 @@ public class AnimationControls extends SettingsPreferenceFragment implements OnP
         mAnimationDuration.setInitValue((int) (defaultDuration));
         mAnimationDuration.setOnPreferenceChangeListener(this);
     }
+
     @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
-                                         Preference preference) {
-       if (preference == mAnimNoOverride) {
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        if (preference == mAnimNoOverride) {
             Settings.System.putBoolean(mContentRes,
                     Settings.System.ANIMATION_CONTROLS_NO_OVERRIDE,
-                        mAnimNoOverride.isChecked());
+                    mAnimNoOverride.isChecked());
             return true;
         }
         return false;
     }
+
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         boolean result = false;
-
         if (preference == mActivityOpenPref) {
-
             int val = Integer.parseInt((String) newValue);
             result = Settings.System.putInt(mContentRes,
                     Settings.System.ACTIVITY_ANIMATION_CONTROLS[0], val);
-
         } else if (preference == mActivityClosePref) {
-
             int val = Integer.parseInt((String) newValue);
             result = Settings.System.putInt(mContentRes,
                     Settings.System.ACTIVITY_ANIMATION_CONTROLS[1], val);
-
         } else if (preference == mTaskOpenPref) {
-
             int val = Integer.parseInt((String) newValue);
             result = Settings.System.putInt(mContentRes,
                     Settings.System.ACTIVITY_ANIMATION_CONTROLS[2], val);
-
         } else if (preference == mTaskClosePref) {
-
             int val = Integer.parseInt((String) newValue);
             result = Settings.System.putInt(mContentRes,
                     Settings.System.ACTIVITY_ANIMATION_CONTROLS[3], val);
-
         } else if (preference == mTaskMoveToFrontPref) {
-
             int val = Integer.parseInt((String) newValue);
             result = Settings.System.putInt(mContentRes,
                     Settings.System.ACTIVITY_ANIMATION_CONTROLS[4], val);
-
         } else if (preference == mTaskMoveToBackPref) {
-
             int val = Integer.parseInt((String) newValue);
             result = Settings.System.putInt(mContentRes,
                     Settings.System.ACTIVITY_ANIMATION_CONTROLS[5], val);
         } else if (preference == mWallpaperOpen) {
-
             int val = Integer.parseInt((String) newValue);
             result = Settings.System.putInt(mContentRes,
                     Settings.System.ACTIVITY_ANIMATION_CONTROLS[6], val);
         } else if (preference == mWallpaperClose) {
-
             int val = Integer.parseInt((String) newValue);
             result = Settings.System.putInt(mContentRes,
                     Settings.System.ACTIVITY_ANIMATION_CONTROLS[7], val);
         } else if (preference == mWallpaperIntraOpen) {
-
             int val = Integer.parseInt((String) newValue);
             result = Settings.System.putInt(mContentRes,
                     Settings.System.ACTIVITY_ANIMATION_CONTROLS[8], val);
         } else if (preference == mWallpaperIntraClose) {
-
             int val = Integer.parseInt((String) newValue);
             result = Settings.System.putInt(mContentRes,
                     Settings.System.ACTIVITY_ANIMATION_CONTROLS[9], val);
         } else if (preference == mAnimationDuration) {
             int val = Integer.parseInt((String) newValue);
             Settings.System.putInt(mContentRes,
-                    Settings.System.ANIMATION_CONTROLS_DURATION,
-                    val);
+                    Settings.System.ANIMATION_CONTROLS_DURATION, val);
         }
         preference.setSummary(getProperSummary(preference));
         return result;
     }
+
     private String getProperSummary(Preference preference) {
         String mString = "";
         if (preference == mActivityOpenPref) {
