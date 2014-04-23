@@ -1,6 +1,7 @@
 package com.android.settings.ose;
 
 import android.app.ActivityManager;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.preference.Preference;
 import android.preference.PreferenceScreen;
 import android.preference.PreferenceCategory;
 import android.preference.Preference.OnPreferenceChangeListener;
+import android.widget.Toast;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -20,18 +22,13 @@ public class ScreenAndAnimations extends SettingsPreferenceFragment implements
 
     private static final String KEY_ANIMATION_OPTIONS = "category_animation_options";
     private static final String KEY_POWER_CRT_MODE = "system_power_crt_mode";
-    private static final String KEY_ANIMATION_OPTIONS = "category_animation_options";
     private static final String KEY_LISTVIEW_ANIMATION = "listview_animation";
     private static final String KEY_LISTVIEW_INTERPOLATOR = "listview_interpolator";
-    private static final String KEY_WAKEUP_WHEN_PLUGGED_UNPLUGGED = "wakeup_when_plugged_unplugged";
-    private static final String KEY_WAKEUP_CATEGORY = "category_wakeup_options";
     private static final String KEY_TOAST_ANIMATION = "toast_animation";
 
     private ListPreference mCrtMode;
     private ListPreference mListViewAnimation;
     private ListPreference mListViewInterpolator;
-    private CheckBoxPreference mWakeUpWhenPluggedOrUnplugged;
-    private PreferenceCategory mWakeUpOptions;
     private ListPreference mToastAnimation;
 
     @Override
@@ -40,9 +37,9 @@ public class ScreenAndAnimations extends SettingsPreferenceFragment implements
 
         addPreferencesFromResource(R.xml.ose_screen_and_animations);
 
-	PreferenceScreen prefSet = getPreferenceScreen();
+        PreferenceScreen prefSet = getPreferenceScreen();
 
-	// respect device default configuration
+        // respect device default configuration
         // true fades while false animates
         boolean electronBeamFadesConfig = getResources().getBoolean(
                 com.android.internal.R.bool.config_animateScreenLights);
@@ -78,7 +75,7 @@ public class ScreenAndAnimations extends SettingsPreferenceFragment implements
 
         mToastAnimation = (ListPreference) prefSet.findPreference(KEY_TOAST_ANIMATION);
         mToastAnimation.setSummary(mToastAnimation.getEntry());
-        int CurrentToastAnimation = Settings.System.getInt(resolver,
+        int CurrentToastAnimation = Settings.System.getInt(getContentResolver(),
                 Settings.System.TOAST_ANIMATION, 1);
         mToastAnimation.setValueIndex(CurrentToastAnimation);
         mToastAnimation.setOnPreferenceChangeListener(this);
@@ -93,16 +90,16 @@ public class ScreenAndAnimations extends SettingsPreferenceFragment implements
         final String key = preference.getKey();
 
         if (KEY_POWER_CRT_MODE.equals(key)) {
-            int value = Integer.parseInt((String) objValue);
-            int index = mCrtMode.findIndexOfValue((String) objValue);
+            int value = Integer.parseInt((String) newValue);
+            int index = mCrtMode.findIndexOfValue((String) newValue);
             Settings.System.putInt(getContentResolver(),
                     Settings.System.SYSTEM_POWER_CRT_MODE,
                     value);
             mCrtMode.setSummary(mCrtMode.getEntries()[index]);
         }
         if (KEY_LISTVIEW_ANIMATION.equals(key)) {
-            int value = Integer.parseInt((String) objValue);
-            int index = mListViewAnimation.findIndexOfValue((String) objValue);
+            int value = Integer.parseInt((String) newValue);
+            int index = mListViewAnimation.findIndexOfValue((String) newValue);
             Settings.System.putInt(getContentResolver(),
                     Settings.System.LISTVIEW_ANIMATION,
                     value);
@@ -110,22 +107,17 @@ public class ScreenAndAnimations extends SettingsPreferenceFragment implements
             mListViewInterpolator.setEnabled(value > 0);
         }
         if (KEY_LISTVIEW_INTERPOLATOR.equals(key)) {
-            int value = Integer.parseInt((String) objValue);
-            int index = mListViewInterpolator.findIndexOfValue((String) objValue);
+            int value = Integer.parseInt((String) newValue);
+            int index = mListViewInterpolator.findIndexOfValue((String) newValue);
             Settings.System.putInt(getContentResolver(),
                     Settings.System.LISTVIEW_INTERPOLATOR,
                     value);
             mListViewInterpolator.setSummary(mListViewInterpolator.getEntries()[index]);
         }
-        if (KEY_WAKEUP_WHEN_PLUGGED_UNPLUGGED.equals(key)) {
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.WAKEUP_WHEN_PLUGGED_UNPLUGGED,
-                    (Boolean) objValue ? 1 : 0);
-        }
         if (KEY_TOAST_ANIMATION.equals(key)) {
-            int index = mToastAnimation.findIndexOfValue((String) objValue);
-            Settings.System.putString(resolver,
-                    Settings.System.TOAST_ANIMATION, (String) objValue);
+            int index = mToastAnimation.findIndexOfValue((String) newValue);
+            Settings.System.putString(getContentResolver(),
+                    Settings.System.TOAST_ANIMATION, (String) newValue);
             mToastAnimation.setSummary(mToastAnimation.getEntries()[index]);
             Toast.makeText(getActivity(), "Toast animation test!!!",
                     Toast.LENGTH_SHORT).show();

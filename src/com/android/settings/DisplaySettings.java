@@ -62,6 +62,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_BATTERY_LIGHT = "battery_light";
     private static final String KEY_SCREEN_SAVER = "screensaver";
     private static final String KEY_VOLUME_WAKE = "pref_volume_wake";
+    private static final String KEY_WAKEUP_WHEN_PLUGGED_UNPLUGGED = "wakeup_when_plugged_unplugged";
+    private static final String KEY_WAKEUP_CATEGORY = "category_wakeup_options";
     private static final String SREC_ENABLE_TOUCHES = "srec_enable_touches";
     private static final String SREC_ENABLE_MIC = "srec_enable_mic";
 
@@ -79,6 +81,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private PreferenceScreen mNotificationLight;
     private PreferenceScreen mBatteryPulse;
     private CheckBoxPreference mVolumeWake;
+    private CheckBoxPreference mWakeUpWhenPluggedOrUnplugged;
+    private PreferenceCategory mWakeUpOptions;
     private CheckBoxPreference mSrecEnableTouches;
     private CheckBoxPreference mSrecEnableMic;
 
@@ -455,6 +459,11 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         if (KEY_VOLUME_WAKE.equals(key)) {
             Settings.System.putInt(getContentResolver(),
                     Settings.System.VOLUME_WAKE_SCREEN,
+                    (Boolean) objValue ? 1 : 0);
+        }
+        if (KEY_WAKEUP_WHEN_PLUGGED_UNPLUGGED.equals(key)) {
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.WAKEUP_WHEN_PLUGGED_UNPLUGGED,
                     (Boolean) objValue ? 1 : 0);
         }
         if (SREC_ENABLE_TOUCHES.equals(key)) {

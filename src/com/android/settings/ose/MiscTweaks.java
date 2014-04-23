@@ -41,9 +41,10 @@ import android.os.UserHandle;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
+import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
-import android.preference.Preference.OnPreferenceChangeListener;
 import android.text.Editable;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -78,7 +79,8 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.Properties;
 
-public class MiscTweaks extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
+public class MiscTweaks extends SettingsPreferenceFragment
+        implements OnPreferenceChangeListener {
 
     private static final String TAG = "MiscTweaks";
 
@@ -160,6 +162,12 @@ public class MiscTweaks extends SettingsPreferenceFragment implements OnPreferen
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+    //Nothing here
+    return true;
     }
 
     private Set<String> getIncludedApps() {
