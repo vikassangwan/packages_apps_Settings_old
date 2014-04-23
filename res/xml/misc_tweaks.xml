@@ -30,13 +30,11 @@
                 android:fragment="com.android.settings.ose.RecentsPanel"
                 android:title="@string/recent_apps_panel_title" />
 
-             <ListPreference
+            <Preference
                 android:key="lcd_density"
-                android:title="@string/custom_density_title"
-                android:entries="@array/lcd_density_entries"
-                android:entryValues="@array/lcd_density_entries" />
+                android:title="@string/custom_density_title" />
 
-             <CheckBoxPreference
+            <CheckBoxPreference
                 android:key="disable_fc_notifications"
                 android:title="@string/disable_fc_notifications_title"
                 android:persistent="false" />

@@ -38,7 +38,6 @@ import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.SystemProperties;
 import android.os.UserHandle;
-import android.os.UserHandle;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -46,12 +45,18 @@ import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.text.Editable;
+import android.util.DisplayMetrics;
+import android.util.Log;
 import android.util.Slog;
 import android.view.IWindowManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.preference.SeekBarPreference;
+import android.widget.ImageView;
+import android.widget.SeekBar;
+import android.widget.TextView;
+import android.widget.Toast;
 import android.provider.Settings;
 import android.text.TextUtils;
 
@@ -62,11 +67,16 @@ import com.android.settings.Utils;
 import com.android.settings.ose.AppMultiSelectListPreference;
 import com.android.internal.util.ose.DeviceUtils;
 
+import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
 import java.lang.Thread;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.Properties;
 
 public class MiscTweaks extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
@@ -78,8 +88,11 @@ public class MiscTweaks extends SettingsPreferenceFragment implements OnPreferen
     private static final String DENSITY_PROP = "persist.sys.lcd_density";
     private static final String PREF_INCLUDE_APP_CIRCLE_BAR_KEY = "app_circle_bar_included_apps";
 
-    private static ListPreference mLcdDensity;
+    private static Preference mLcdDensity;
     private static Activity mActivity;
+    private static int mMaxDensity = DisplayMetrics.getDeviceDensity();
+    private static int mDefaultDensity = getOSEDefaultDensity();
+    private static int mMinDensity = getMinimumDensity();
 
     private AppMultiSelectListPreference mIncludedAppCircleBar;
     private CheckBoxPreference mDisableFC;
@@ -104,24 +117,33 @@ public class MiscTweaks extends SettingsPreferenceFragment implements OnPreferen
         mDisableFC.setChecked((Settings.System.getInt(resolver,
                 Settings.System.DISABLE_FC_NOTIFICATIONS, 0) == 1));
 
-        mLcdDensity = (ListPreference) findPreference(KEY_LCD_DENSITY);
-        String current = SystemProperties.get(DENSITY_PROP,
-                SystemProperties.get("ro.sf.lcd_density"));
-        final ArrayList<String> array = new ArrayList<String>(
-                Arrays.asList(getResources().getStringArray(R.array.lcd_density_entries)));
-        if (array.contains(current)) {
-            mLcdDensity.setValue(current);
-        } else {
-            mLcdDensity.setValue("custom");
-        }
-        mLcdDensity.setSummary(getResources().getString(R.string.current_lcd_density) + current);
-        mLcdDensity.setOnPreferenceChangeListener(this);
-
         mIncludedAppCircleBar = (AppMultiSelectListPreference) prefSet.findPreference(PREF_INCLUDE_APP_CIRCLE_BAR_KEY);
         Set<String> includedApps = getIncludedApps();
         if (includedApps != null) mIncludedAppCircleBar.setValues(includedApps);
         mIncludedAppCircleBar.setOnPreferenceChangeListener(this);
 
+        mLcdDensity = (Preference) findPreference(KEY_LCD_DENSITY);
+        String current = SystemProperties.get(DENSITY_PROP,
+                SystemProperties.get("ro.sf.lcd_density"));
+        mLcdDensity.setSummary(getResources().getString(R.string.current_density) + current);
+        mLcdDensity.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                showDialogInner(DIALOG_CUSTOM_DENSITY);
+                return true;
+            }
+        });
+    }
+
+    private static int getMinimumDensity() {
+        int min = -1;
+        int[] densities = { 91, 121, 161, 241, 321, 481 };
+        for (int density : densities) {
+            if (density < mMaxDensity) {
+                min = density;
+            }
+        }
+        return min;
     }
 
     @Override
@@ -138,26 +160,6 @@ public class MiscTweaks extends SettingsPreferenceFragment implements OnPreferen
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
-    }
-
-    @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mLcdDensity) {
-            String density = (String) newValue;
-            if (SystemProperties.get(DENSITY_PROP) != density) {
-                if ((density).equals(getResources().getString(R.string.custom_density))) {
-                    showDialogInner(DIALOG_CUSTOM_DENSITY);
-                } else {
-                    setDensity(Integer.parseInt(density));
-                }
-            }
-            return true;
-        } else if (preference == mIncludedAppCircleBar) {
-            storeIncludedApps((Set<String>) newValue);
-        } else {
-            return false;
-        }
-        return true;
     }
 
     private Set<String> getIncludedApps() {
@@ -182,36 +184,33 @@ public class MiscTweaks extends SettingsPreferenceFragment implements OnPreferen
     }
 
     private static void setDensity(int density) {
-        int max = mActivity.getResources().getInteger(R.integer.lcd_density_max);
-        int min = mActivity.getResources().getInteger(R.integer.lcd_density_min);
-        if (density < min || density > max) {
-            mLcdDensity.setSummary(mActivity.getResources().getString(
-                                            R.string.custom_density_summary_invalid));
-        }
         SystemProperties.set(DENSITY_PROP, Integer.toString(density));
+        DisplayMetrics.setCurrentDensity(density);
+        final IWindowManager windowManagerService = IWindowManager.Stub.asInterface(
+                ServiceManager.getService(Context.WINDOW_SERVICE));
+        try {
+            windowManagerService.updateStatusBarNavBarHeight();
+        } catch (RemoteException e) {
+            Slog.w(TAG, "Failure communicating with window manager", e);
+        }
         Configuration configuration = new Configuration();
         configuration.setToDefaults();
         configuration.densityDpi = density;
         try {
-           ActivityManagerNative.getDefault().updateConfiguration(configuration);
+            ActivityManagerNative.getDefault().updateConfiguration(configuration);
         } catch (RemoteException e) {
             Slog.w(TAG, "Failure communicating with activity manager", e);
         }
-        final IWindowManager windowManagerService = IWindowManager.Stub.asInterface(
-                ServiceManager.getService(Context.WINDOW_SERVICE));
-        try {
-           windowManagerService.updateSettings();
-        } catch (RemoteException e) {
-            Slog.w(TAG, "Failure communicating with window manager", e);
-        }
+
+        killRunningApps();
     }
 
-    private static void killCurrentLauncher() {
-        ComponentName defaultLauncher = mActivity.getPackageManager().getHomeActivities(
-                        new ArrayList<ResolveInfo>());
-                ActivityManager am = (ActivityManager) mActivity.getSystemService(
-                        Context.ACTIVITY_SERVICE);
-                am.killBackgroundProcesses(defaultLauncher.getPackageName());
+    private static void killRunningApps() {
+        ActivityManager am = (ActivityManager) mActivity.getSystemService(
+                Context.ACTIVITY_SERVICE);
+        for (ActivityManager.RunningAppProcessInfo pid : am.getRunningAppProcesses()) {
+            am.killBackgroundProcesses(pid.processName);
+        }
     }
 
     private void showDialogInner(int id) {
@@ -234,27 +233,64 @@ public class MiscTweaks extends SettingsPreferenceFragment implements OnPreferen
             return (MiscTweaks) getTargetFragment();
         }
 
+        private void setTextDPI(TextView tv, String dpi) {
+            tv.setText(getResources().getString(R.string.new_density) + dpi);
+        }
+
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
             LayoutInflater factory = LayoutInflater.from(getActivity());
             int id = getArguments().getInt("id");
             switch (id) {
                 case DIALOG_CUSTOM_DENSITY:
-                    final View textEntryView = factory.inflate(
-                            R.layout.alert_dialog_text_entry, null);
+                    final View dialogView = factory.inflate(
+                            R.layout.density_changer_dialog, null);
+                    final TextView currentDPI = (TextView)
+                            dialogView.findViewById(R.id.current_dpi);
+                    final TextView newDPI = (TextView) dialogView.findViewById(R.id.new_dpi);
+                    final SeekBar dpi = (SeekBar) dialogView.findViewById(R.id.dpi_edit);
+                    String current = SystemProperties.get(DENSITY_PROP,
+                            SystemProperties.get("ro.sf.lcd_density"));
+                    setTextDPI(newDPI, current);
+                    currentDPI.setText(getResources().getString(
+                            R.string.current_density) + current);
+                    dpi.setMax(mMaxDensity - mMinDensity);
+                    dpi.setProgress(Integer.parseInt(current) - mMinDensity);
+                    dpi.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+                        @Override
+                        public void onProgressChanged(SeekBar seekBar,
+                                int progress, boolean fromUser) {
+                            int value = progress + mMinDensity;
+                            setTextDPI(newDPI, Integer.toString(value));
+                        }
+
+                        @Override
+                        public void onStartTrackingTouch(SeekBar seekBar) {
+                        }
+
+                        @Override
+                        public void onStopTrackingTouch(SeekBar seekBar) {
+                        }
+                    });
+                    ImageView setDefault = (ImageView) dialogView.findViewById(R.id.default_dpi);
+                    setDefault.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            if (mDefaultDensity != -1) {
+                                dpi.setProgress(mDefaultDensity - mMinDensity);
+                                setTextDPI(newDPI, Integer.toString(mDefaultDensity));
+                            }
+                        }
+                    });
                     return new AlertDialog.Builder(getActivity())
                             .setTitle(getResources().getString(R.string.set_custom_density_title))
-                            .setView(textEntryView)
+                            .setView(dialogView)
                             .setPositiveButton(getResources().getString(
                                     R.string.set_custom_density_set),
                                     new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int whichButton) {
-                                    EditText dpi = (EditText)
-                                            textEntryView.findViewById(R.id.dpi_edit);
-                                    Editable text = dpi.getText();
                                     dialog.dismiss();
-                                    setDensity(Integer.parseInt(text.toString()));
-
+                                    setDensity(dpi.getProgress() + mMinDensity);
                                 }
                             })
                             .setNegativeButton(getResources().getString(R.string.cancel),
@@ -271,5 +307,24 @@ public class MiscTweaks extends SettingsPreferenceFragment implements OnPreferen
         @Override
         public void onCancel(DialogInterface dialog) {
         }
+    }
+
+    public static int getOSEDefaultDensity() {
+        Properties prop = new Properties();
+        FileInputStream fis = null;
+        try {
+            fis = new FileInputStream("/system/build.prop");
+            prop.load(fis);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (fis != null) {
+                    fis.close();
+                }
+            } catch (Exception e) {
+            }
+        }
+        return Integer.parseInt(prop.getProperty(DENSITY_PROP, "-1"));
     }
 }

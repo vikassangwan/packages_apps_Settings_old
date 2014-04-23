@@ -971,15 +971,11 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Density Changer -->
     <string name="custom_density_title">Custom lcd density</string>
-    <string name="custom_density">custom</string>
     <string name="set_custom_density_title">Set custom density</string>
     <string name="set_custom_density_set">Set</string>
-    <string name="reboot_now">Reboot</string>
-    <string name="dialog_reboot_title">Would you like to reboot?</string>
-    <string name="dialog_reboot_summary">You must reboot to apply new density</string>
-    <string name="custom_density_summary_invalid">"INVALID DENSITY!"</string>
-    <string name="dpi">DPI</string>
-    <string name="current_lcd_density">"Current LCD Density: "</string>
+    <string name="current_density">"Current density: "</string>
+    <string name="new_density">"New density: "</string>
+    <string name="density_change_warning">Note: Changing density will close all running apps!</string>
 
     <!-- Rescan media volume -->
     <string name="storage_rescan_media">Rescan media for the storage volume</string>

@@ -80,4 +80,6 @@
             android:title="@string/scrolling_title"
             android:summary="@string/scrolling_summary" />
 
+  </PreferenceCategory>
+
 </PreferenceScreen>
