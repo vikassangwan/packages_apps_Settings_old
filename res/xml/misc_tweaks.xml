@@ -80,6 +80,10 @@
                 android:title="@string/lockscreen_notifications"
                 android:fragment="com.android.settings.ose.LockscreenNotifications" />
 
+            <CheckBoxPreference
+                android:key="notification_peek"
+                android:title="@string/notification_peek_title" />
+
         </PreferenceCategory>
 
         <PreferenceCategory
