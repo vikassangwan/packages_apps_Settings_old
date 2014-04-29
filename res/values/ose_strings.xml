@@ -34,9 +34,18 @@
 
     <!-- OSE settings screens -->
     <string name="interface_settings_title">OSE Extras</string>
+    <string name="lockscreen_settings_title">Lock screen</string>
     <string name="navigation_settings_title">Navigation</string>
     <!-- Advanced, Device specific (DeviceParts) settings  -->
     <string name="device_settings_title">Device</string>
+
+    <!-- Category titles -->
+    <string name="additional_category_title">Additional</string>
+    <string name="general_category_title">General</string>
+
+    <!-- Advanced titles -->
+    <string name="advanced_category_title">Advanced</string>
+    <string name="advanced_options_title">Advanced options</string>
 
     <!-- OSE Shortcuts -->
     <string name="ose_shortcut_picker">OSE Actions</string>
@@ -671,9 +680,15 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="display_rotation_180_title">180 degrees</string>
     <string name="display_rotation_270_title">270 degrees</string>
 
-    <!-- Lock Screen ASS -->
-    <string name="lock_screen_title">Slider targets and shortcuts</string>
-    <string name="lock_screen_summary">View or change the slider targets and shortcuts</string>
+    <!-- Lock screen settings -->
+    <string name="lock_screen_interface_title">Interface</string>
+    <string name="lock_screen_interface_summary">Customize lock screen sliders or shortcuts</string>
+    <string name="lock_screen_notifications_title">Notifications</string>
+    <string name="lock_screen_notifications_summary">Configure lock screen notification settings</string>
+    <string name="lock_screen_style_title">Style</string>
+    <string name="lock_screen_style_summary">Change appearance of lock screen or colors</string>
+    <string name="lock_screen_widgets_title">Widgets</string>
+    <string name="lock_screen_widgets_summary">Customize functions of lock screen widgets</string>
 
     <!-- Lock Screen Targets -->
     <string name="lockscreen_target_info">Drag the slider to targets to assign applications</string>
@@ -788,6 +803,17 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="lock_pattern_size_4">4x4</string>
     <string name="lock_pattern_size_5">5x5</string>
     <string name="lock_pattern_size_6">6x6</string>
+
+    <!-- Lock screen battery ring -->
+    <string name="battery_around_ring_title">Battery around ring</string>
+    <string name="battery_around_ring_summary">Display battery level around unlock ring</string>
+
+    <!--Lock screen see through-->
+    <string name="see_through_title">See through</string>
+    <string name="see_through_summary">Shows the content behind lock screen</string>
+
+    <!--Lock screen blur radius -->
+    <string name="blur_radius_title">Blur radius</string>
 
     <!-- Notification drawer background -->
     <string name="notification_style_title">Background style</string>
@@ -1134,7 +1160,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="minimum_vibration_duration">Minimum vibration duration</string>
 
     <!-- Text for disabling FC notifications -->
-    <string name="disable_fc_notifications_title">Diable FC Notifications</string>
+    <string name="disable_fc_notifications_title">Disable FC Notifications</string>
     <string name="disable_fc_notifications_summary">This will hide all force close notificaitons</string>
 
     <!-- Text for Misc Tweaks entry -->
@@ -1445,6 +1471,11 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Notification Reminders -->
     <string name="noti_reminder_category">Notification reminder</string>
+
+    <!-- Lockscreen wallpaper -->
+    <string name="lockscreen_wallpaper">Custom wallpaper</string>
+    <string name="select_wallpaper">Select wallpaper</string>
+
     <string name="noti_reminder_enable_title">Enable notification reminder</string>
     <string name="noti_reminder_sound_title">Notify sound</string>
     <string name="noti_reminder_sound_looping">Until dismissed</string>
@@ -1828,7 +1859,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Settings Categories -->
     <string name="category_customization_title">Customization</string>
     <string name="category_app_launchers_title">App Launchers</string>
-    <string name="category_lockscreen_features_title">Lockscreen</string>
+    <string name="category_lockscreen_features_title">Notifications</string>
     <string name="category_misc_title">Miscellaneous</string>
 
     <!-- OSE Logo -->

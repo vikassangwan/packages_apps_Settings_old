@@ -69,24 +69,6 @@
         </PreferenceCategory>
 
         <PreferenceCategory
-            android:title="@string/category_lockscreen_features_title" >
-
-            <PreferenceScreen
-                android:key="active_display"
-                android:fragment="com.android.settings.ose.ActiveDisplaySettings"
-                android:title="@string/ad_settings_title" />
-
-            <PreferenceScreen
-                android:title="@string/lockscreen_notifications"
-                android:fragment="com.android.settings.ose.LockscreenNotifications" />
-
-            <CheckBoxPreference
-                android:key="notification_peek"
-                android:title="@string/notification_peek_title" />
-
-        </PreferenceCategory>
-
-        <PreferenceCategory
             android:title="@string/category_misc_title" >
 
             <PreferenceScreen
