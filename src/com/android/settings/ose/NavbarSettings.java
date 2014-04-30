@@ -162,11 +162,11 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
             mMenuDisplayLocation.setEnabled(mNavBarMenuDisplayValue != 1);
             return true;
         } else if (preference == mEnableNavigationBar) {
-            if (!((Boolean) newValue) && !OSEActions.isPieEnabled(getActivity())
+            /* if (!((Boolean) newValue) && !LiquidActions.isPieEnabled(getActivity())
                     && OSEActions.isNavBarDefault(getActivity())) {
                 showDialogInner(DLG_NAVIGATION_WARNING);
                 return true;
-            }
+            } */
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.NAVIGATION_BAR_SHOW,
                     ((Boolean) newValue) ? 1 : 0);
