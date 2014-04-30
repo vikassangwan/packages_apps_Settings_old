@@ -646,6 +646,10 @@ public class SecuritySettings extends RestrictedSettingsFragment
                     Integer.valueOf((String) value));
             mAdvancedReboot.setValue(String.valueOf(value));
             mAdvancedReboot.setSummary(mAdvancedReboot.getEntry());
+        } else if (preference == mSmsSecurityCheck) {
+            int smsSecurityCheck =
+                    Integer.valueOf(mSmsSecurityCheck.getValue());
+            updateSmsSecuritySummary(smsSecurityCheck);
         }
         return true;
     }
