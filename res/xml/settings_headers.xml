@@ -58,8 +58,8 @@
         android:fragment="com.android.settings.WirelessSettings"
         android:icon="@drawable/empty_icon" />
 
-    <!-- Additional OSE controls -->
-    <header android:title="@string/header_category_rom_settings" />
+    <!-- Themes Category -->
+    <header android:title="@string/themes_header_title" />
 
     <!-- Themes -->
     <header
@@ -70,12 +70,16 @@
 
     <header
         android:id="@+id/themes_settings"
+        android:icon="@drawable/ic_settings_themes"
         android:title="@string/themes_settings_title">
         <intent
             android:action="android.intent.action.MAIN"
             android:targetPackage="com.tmobile.themechooser"
             android:targetClass="com.tmobile.themechooser.ThemeChooser" />
     </header>
+
+    <!-- Additional OSE controls -->
+    <header android:title="@string/header_category_rom_settings" />
 
     <!-- Interface -->
     <header
@@ -106,6 +110,7 @@
     <header
         android:key="interface_voice_tts"
         android:fragment="com.android.settings.ose.DrivingMode"
+        android:icon="@drawable/ic_settings_driving"
         android:title="@string/voice_tts_title" />
 
     <!-- DEVICE -->

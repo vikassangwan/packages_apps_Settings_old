@@ -79,9 +79,6 @@ public class LockscreenInterface extends SettingsPreferenceFragment
     private static final String PREF_LOCKSCREEN_SHORTCUTS = "lockscreen_shortcuts";
     private static final String PREF_LOCKSCREEN_TORCH = "lockscreen_torch";
     private static final String KEY_SEE_TRHOUGH = "see_through";
-
-    private CheckBoxPreference mLockscreenEightTargets;
-    private CheckBoxPreference mGlowpadTorch;
     private static final String KEY_LOCKSCREEN_WALLPAPER = "lockscreen_wallpaper";
     private static final String KEY_SELECT_LOCKSCREEN_WALLPAPER = "select_lockscreen_wallpaper";
 

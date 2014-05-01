@@ -1985,6 +1985,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="battery_saver_system_title">System options</string>
 
     <!-- Theme chooser -->
+    <string name="themes_header_title">Appearance</string>
     <string name="themes_settings_title">Themes</string>
 
     <!-- Notification Panel Shortcuts -->
@@ -2014,5 +2015,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="unlock_home_unlock_summary">Pressing the home button unlocks the device</string>
     <string name="unlock_menu_unlock_title">Menu unlock</string>
     <string name="unlock_menu_unlock_summary">Pressing the menu button unlocks the device</string>
+
+    <!-- Sms security limit -->
+    <string name="sms_security_check_limit_title">SMS message limit</string>
+    <string name="sms_security_check_limit_summary">Display an alert dialog to prevent applications from sending SMS messages too frequently. Current limit: %d messages in 15 minutes</string>
+    <string name="sms_security_check_limit_default">30 (Default)</string>
 
 </resources>
