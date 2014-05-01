@@ -24,6 +24,11 @@
         android:title="@string/status_bar_style_title">
 
         <PreferenceScreen
+            android:fragment="com.android.settings.ose.BatteryIconStyle"
+            android:key="battery_style_pref"
+            android:title="@string/battery_icon_title" />
+
+	<PreferenceScreen
             android:fragment="com.android.settings.ose.StatusBarClockStyle"
             android:key="clock_style_pref"
             android:title="@string/status_bar_clock" />

@@ -217,7 +217,7 @@
     <string name="safe_headset_volume_warning_dialog_text">Listening at high volume for long periods may damage your hearing. Disable it with caution.</string>
 
     <!-- Display : Animation options -->
-    <string name="screen_and_animations_title">Appearance</string>
+    <string name="screen_and_animations_title">Animations</string>
     <string name="display_category_animation_options_title">Animation options</string>
     <string name="system_power_crt_mode_title">CRT animation </string>
     <string name="system_power_crt_mode_dialog_title">CRT animation</string>
@@ -1444,6 +1444,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="toast_Translucent_animation">Translucent Animation</string>
 
     <!-- Themes title-->
+    <string name="themes_header_title">Appearance</string>
     <string name="themes_settings_title">Themes</string>
 
     <!-- Smooth ProgressBar -->

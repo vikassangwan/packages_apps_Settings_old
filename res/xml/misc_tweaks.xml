@@ -20,17 +20,7 @@
         <PreferenceCategory
             android:title="@string/category_customization_title" >
 
-            <PreferenceScreen
-                android:key="notification_drawer_qs"
-                android:fragment="com.android.settings.ose.NotificationDrawerQsSettings"
-                android:title="@string/notification_drawer_qs_title" />
-
-            <PreferenceScreen
-                android:key="recents_apps_panel"
-                android:fragment="com.android.settings.ose.RecentsPanel"
-                android:title="@string/recent_apps_panel_title" />
-
-             <ListPreference
+            <ListPreference
                 android:key="lcd_density"
                 android:title="@string/custom_density_title"
                 android:entries="@array/lcd_density_entries"
@@ -70,11 +60,6 @@
 
         <PreferenceCategory
             android:title="@string/category_misc_title" >
-
-            <PreferenceScreen
-                android:key="interface_voice_tts"
-                android:fragment="com.android.settings.ose.DrivingMode"
-                android:title="@string/voice_tts_title" />
 
             <PreferenceScreen
                 android:id="@+id/halo_settings"
