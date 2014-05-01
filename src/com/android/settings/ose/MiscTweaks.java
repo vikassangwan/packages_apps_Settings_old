@@ -33,10 +33,7 @@ import android.content.pm.ResolveInfo;
 import android.content.res.Configuration;
 import android.content.ContentResolver;
 import android.content.res.Resources;
-import android.database.ContentObserver;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.SystemProperties;
@@ -80,14 +77,12 @@ public class MiscTweaks extends SettingsPreferenceFragment implements OnPreferen
     private static final int DIALOG_CUSTOM_DENSITY = 101;
     private static final String DENSITY_PROP = "persist.sys.lcd_density";
     private static final String PREF_INCLUDE_APP_CIRCLE_BAR_KEY = "app_circle_bar_included_apps";
-    private static final String KEY_PEEK = "notification_peek";
 
     private static ListPreference mLcdDensity;
     private static Activity mActivity;
 
     private AppMultiSelectListPreference mIncludedAppCircleBar;
     private CheckBoxPreference mDisableFC;
-    private CheckBoxPreference mNotificationPeek;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -96,7 +91,6 @@ public class MiscTweaks extends SettingsPreferenceFragment implements OnPreferen
         mActivity = getActivity();
 
         updateSettings();
-        updatePeekCheckbox();
     }
 
     private void updateSettings() {
@@ -127,10 +121,6 @@ public class MiscTweaks extends SettingsPreferenceFragment implements OnPreferen
         Set<String> includedApps = getIncludedApps();
         if (includedApps != null) mIncludedAppCircleBar.setValues(includedApps);
         mIncludedAppCircleBar.setOnPreferenceChangeListener(this);
-
-        mNotificationPeek = (CheckBoxPreference) findPreference(KEY_PEEK);
-        mNotificationPeek.setPersistent(false);
-
     }
 
     @Override
@@ -145,9 +135,6 @@ public class MiscTweaks extends SettingsPreferenceFragment implements OnPreferen
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.DISABLE_FC_NOTIFICATIONS, checked ? 1:0);
             return true;
-        } else if (preference == mNotificationPeek) {
-            Settings.System.putInt(getContentResolver(), Settings.System.PEEK_STATE,
-                    mNotificationPeek.isChecked() ? 1 : 0);
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
@@ -230,12 +217,6 @@ public class MiscTweaks extends SettingsPreferenceFragment implements OnPreferen
         DialogFragment newFragment = MyAlertDialogFragment.newInstance(id);
         newFragment.setTargetFragment(this, 0);
         newFragment.show(getFragmentManager(), "dialog " + id);
-    }
-
-    private void updatePeekCheckbox() {
-        boolean enabled = Settings.System.getInt(getContentResolver(),
-                Settings.System.PEEK_STATE, 0) == 1;
-        mNotificationPeek.setChecked(enabled);
     }
 
     public static class MyAlertDialogFragment extends DialogFragment {
