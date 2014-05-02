@@ -34,7 +34,7 @@
 
     <!-- OSE settings screens -->
     <string name="interface_settings_title">OSE Extras</string>
-    <string name="lockscreen_settings_title">Lock screen</string>
+    <string name="lockscreen_settings_title">Lockscreen</string>
     <string name="navigation_settings_title">Navigation</string>
     <!-- Advanced, Device specific (DeviceParts) settings  -->
     <string name="device_settings_title">Device</string>
