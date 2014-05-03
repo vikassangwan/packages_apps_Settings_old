@@ -19,61 +19,26 @@
 
         <PreferenceCategory
             android:title="@string/category_customization_title" >
+   
 
-            <ListPreference
-                android:key="lcd_density"
-                android:title="@string/custom_density_title"
-                android:entries="@array/lcd_density_entries"
-                android:entryValues="@array/lcd_density_entries" />
 
-             <CheckBoxPreference
-                android:key="disable_fc_notifications"
-                android:title="@string/disable_fc_notifications_title"
-                android:persistent="false" />
 
-        </PreferenceCategory>
 
-        <PreferenceCategory
-            android:title="@string/category_app_launchers_title" >
+
+
+        
 
             <com.android.settings.ose.SystemCheckBoxPreference
                 android:key="enable_app_circle_bar"
+                android:summary="@string/app_circle_bar_summary"
                 android:title="@string/app_circle_bar_title" />
 
             <com.android.settings.ose.AppMultiSelectListPreference
                 android:key="app_circle_bar_included_apps"
                 android:persistent="false"
                 android:title="@string/app_circle_bar_included_apps_title"
+                android:summary="@string/app_circle_bar_included_apps_summary"
                 android:dependency="enable_app_circle_bar" />
-
-            <PreferenceScreen
-                android:key="app_sidebar"
-                android:fragment="com.android.settings.ose.AppSidebar"
-                android:title="@string/app_sidebar_title" />
-
-            <PreferenceScreen
-                android:key="gesture_anywhere"
-                android:fragment="com.android.settings.ose.gestureanywhere.GestureAnywhereSettings"
-                android:title="@string/gesture_anywhere_title" />
-
-        </PreferenceCategory>
-
-        <PreferenceCategory
-            android:title="@string/category_misc_title" >
-
-            <PreferenceScreen
-                android:id="@+id/halo_settings"
-                android:title="@string/halo_settings_title"
-                android:fragment="com.android.settings.ose.Halo" />
-
-            <PreferenceScreen
-                android:key="lock_clock"
-                android:title="@string/lock_clock_title">
-                <intent android:action="android.intent.action.MAIN"
-                    android:targetPackage="com.cyanogenmod.lockclock"
-                    android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
-            </PreferenceScreen>
-
-        </PreferenceCategory>
-
+</PreferenceCategory>
+           
 </PreferenceScreen>

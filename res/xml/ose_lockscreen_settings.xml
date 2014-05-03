@@ -20,6 +20,27 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <PreferenceCategory
+            android:title="@string/category_lockscreen_features_title" >
+
+        <PreferenceScreen
+            android:key="active_display"
+            android:icon="@drawable/ic_settings_actived"
+            android:fragment="com.android.settings.ose.ActiveDisplaySettings"
+            android:title="@string/ad_settings_title" />
+
+        <PreferenceScreen
+            android:title="@string/lockscreen_notifications"
+            android:icon="@drawable/ic_dt_activedisplay"
+            android:fragment="com.android.settings.ose.LockscreenNotifications" />
+
+        <CheckBoxPreference
+            android:key="notification_peek"
+            android:summary="@string/notification_peek_summary"
+            android:title="@string/notification_peek_title" />
+
+    </PreferenceCategory>
+    
+    <PreferenceCategory
         android:key="general_category"
         android:title="@string/general_category_title">
 
@@ -40,24 +61,6 @@
             android:title="@string/lock_screen_widgets_title"
             android:summary="@string/lock_screen_widgets_summary"
             android:fragment="com.android.settings.ose.LockscreenWidgets" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-            android:title="@string/category_lockscreen_features_title" >
-
-        <PreferenceScreen
-            android:key="active_display"
-            android:fragment="com.android.settings.ose.ActiveDisplaySettings"
-            android:title="@string/ad_settings_title" />
-
-        <PreferenceScreen
-            android:title="@string/lockscreen_notifications"
-            android:fragment="com.android.settings.ose.LockscreenNotifications" />
-
-        <CheckBoxPreference
-            android:key="notification_peek"
-            android:title="@string/notification_peek_title" />
 
     </PreferenceCategory>
 
@@ -110,5 +113,18 @@
             android:summary="@string/unlock_quick_unlock_control_summary" />
 
     </PreferenceCategory>
-
+    
+    <PreferenceCategory
+        android:title="@string/custom_sixth_title">
+        
+        <PreferenceScreen
+                android:key="lock_clock"
+                android:title="@string/lock_clock_title">
+                <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.cyanogenmod.lockclock"
+                    android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
+            </PreferenceScreen>
+            
+    </PreferenceCategory>
+   
 </PreferenceScreen>

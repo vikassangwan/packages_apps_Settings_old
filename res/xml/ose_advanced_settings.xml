@@ -19,20 +19,38 @@
     android:title="@string/advanced_options_settings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <PreferenceScreen
-        android:title="@string/superuser"
-        android:fragment="com.koushikdutta.superuser.PolicyNativeFragment" />
-
+    <PreferenceCategory
+        android:title="@string/custom_seventh_title">
+        
     <PreferenceScreen
         android:fragment="com.android.settings.applications.AppOpsSummary"
         android:title="@string/appops_settings_title"
         android:id="@+id/appops_settings" />
-
+        
    <PreferenceScreen
-        android:id="@+id/system_app_remover"
-        android:fragment="com.android.settings.ose.SystemappRemover"
-        android:title="@string/system_app_remover_title" />
+        android:title="@string/superuser"
+        android:fragment="com.koushikdutta.superuser.PolicyNativeFragment" />
 
+   </PreferenceCategory>
+
+   <PreferenceCategory
+            android:title="@string/category_app_launchers_title" >
+
+    <PreferenceScreen
+                android:key="app_sidebar"
+                android:fragment="com.android.settings.ose.AppSidebar"
+                android:title="@string/app_sidebar_title" />
+
+    <PreferenceScreen
+                android:key="gesture_anywhere"
+                android:fragment="com.android.settings.ose.gestureanywhere.GestureAnywhereSettings"
+                android:title="@string/gesture_anywhere_title" />
+
+   </PreferenceCategory>
+   
+   <PreferenceCategory
+        android:title="@string/custom_eighth_title">
+   
    <PreferenceScreen
         android:id="@+id/initD"
         android:fragment="com.android.settings.ose.InitD"
@@ -44,23 +62,10 @@
         android:title="@string/propmodder_title"
         android:fragment="com.android.settings.ose.PropModder"/>
 
-    <PreferenceScreen
-        android:fragment="com.android.settings.ose.BatterySaverSettings"
-        android:title="@string/battery_saver_title" />
-
-    <PreferenceScreen
-        android:key="wakelock_blocker"
-        android:fragment="com.android.settings.ose.fragments.WakeLockBlocker"
-        android:title="@string/wakelock_blocker" />
-
-    <PreferenceScreen
-        android:key="devicesettings_app"
-        android:title="@string/device_settings_title">
-        <intent
-            android:action="com.cyanogenmod.action.LAUNCH_DEVICE_SETTINGS"
-            android:targetPackage="com.cyanogenmod.settings.device"
-            android:targetClass="com.cyanogenmod.settings.device.DeviceSettings" />
-    </PreferenceScreen>
+    </PreferenceCategory>
+    
+    <PreferenceCategory
+        android:title="@string/custom_ninth_title">
 
     <ListPreference
         android:key="media_scanner_on_boot"
@@ -68,5 +73,13 @@
         android:persistent="false"
         android:entries="@array/media_scanner_on_boot_entries"
         android:entryValues="@array/media_scanner_on_boot_values" />
+        
+     <CheckBoxPreference
+        android:key="disable_fc_notifications"
+        android:title="@string/disable_fc_notifications_title"
+        android:fragment="com.android.settings.ose.MiscTweaks"
+        android:persistent="false" />
 
+     </PreferenceCategory>
+     
 </PreferenceScreen>

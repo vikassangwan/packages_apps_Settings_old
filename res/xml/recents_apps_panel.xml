@@ -53,5 +53,19 @@
                 android:title="@string/recent_panel_scale_title"
                 android:summary="@string/recent_panel_scale_summary"
                 android:persistent="false" />
+                
+    <PreferenceCategory
+        android:title="@string/custom_fourth_title">
+        
+         <PreferenceScreen
+            android:id="@+id/omniswitch"
+            android:title="@string/omniswitch_settings_title" >
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="org.omnirom.omniswitch"
+                android:targetClass="org.omnirom.omniswitch.SettingsActivity" />
+     </PreferenceScreen>
+        
+    </PreferenceCategory>
 
 </PreferenceScreen>

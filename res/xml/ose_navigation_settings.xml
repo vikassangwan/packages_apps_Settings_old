@@ -21,6 +21,7 @@
 
     <PreferenceScreen
         android:key="global_menu_settings"
+        android:icon="@drawable/ic_dt_powermenu"
         android:fragment="com.android.settings.ose.dslv.ButtonsListViewSettings"
         android:title="@string/power_menu_title">
             <extra android:name="buttonMode" android:value="6" />
@@ -34,26 +35,20 @@
 
     <PreferenceScreen
         android:key="hardwarekeys_settings"
+        android:icon="@drawable/ic_lockscreen_ime"
         android:fragment="com.android.settings.ose.HardwareKeysSettings"
         android:title="@string/button_keys_title" />
 
     <PreferenceScreen
         android:key="navbar_settings"
+        android:icon="@drawable/ic_lock_navbar"
         android:fragment="com.android.settings.ose.NavbarSettings"
         android:title="@string/navigation_bar" />
 
     <PreferenceScreen
         android:key="pie_settings"
+        android:icon="@drawable/ic_lock_pie"
         android:fragment="com.android.settings.ose.PieControl"
         android:title="@string/pie_control_title" />
-
-     <PreferenceScreen
-            android:id="@+id/omniswitch"
-            android:title="@string/omniswitch_settings_title" >
-            <intent
-                android:action="android.intent.action.MAIN"
-                android:targetPackage="org.omnirom.omniswitch"
-                android:targetClass="org.omnirom.omniswitch.SettingsActivity" />
-     </PreferenceScreen>
 
 </PreferenceScreen>
