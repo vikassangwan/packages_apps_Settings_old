@@ -57,6 +57,7 @@ public class LockscreenSettings extends SettingsPreferenceFragment
     private static final String KEY_SHAKE_TO_SECURE = "shake_to_secure";
     private static final String KEY_SHAKE_AUTO_TIMEOUT = "shake_auto_timeout";
     private static final String KEY_PEEK = "notification_peek";
+    private static final String KEY_PEEK_PICKUP_TIMEOUT = "peek_pickup_timeout";
 
     private PackageManager mPM;
     private DevicePolicyManager mDPM;
@@ -71,6 +72,7 @@ public class LockscreenSettings extends SettingsPreferenceFragment
     private CheckBoxPreference mShakeToSecure;
     private ListPreference mShakeTimer;
     private CheckBoxPreference mNotificationPeek;
+    private ListPreference mPeekPickupTimeout;
 
     // needed for menu unlock
     private Resources keyguardResource;
@@ -214,6 +216,14 @@ public class LockscreenSettings extends SettingsPreferenceFragment
         mNotificationPeek.setPersistent(false);
 
         updatePeekCheckbox();
+
+        mPeekPickupTimeout = (ListPreference) prefs.findPreference(KEY_PEEK_PICKUP_TIMEOUT);
+        int peekTimeout = Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.PEEK_PICKUP_TIMEOUT, 0, UserHandle.USER_CURRENT);
+        mPeekPickupTimeout.setValue(String.valueOf(peekTimeout));
+        mPeekPickupTimeout.setSummary(mPeekPickupTimeout.getEntry());
+        mPeekPickupTimeout.setOnPreferenceChangeListener(this);
+
     }
 
     private void updateShakeTimerPreferenceSummary() {
@@ -237,6 +247,14 @@ public class LockscreenSettings extends SettingsPreferenceFragment
         boolean enabled = Settings.System.getInt(getContentResolver(),
                 Settings.System.PEEK_STATE, 0) == 1;
         mNotificationPeek.setChecked(enabled);
+    }
+
+    private void updatePeekTimeoutOptions(Object newValue) {
+        int index = mPeekPickupTimeout.findIndexOfValue((String) newValue);
+        int value = Integer.valueOf((String) newValue);
+        Settings.Secure.putInt(getActivity().getContentResolver(),
+                Settings.System.PEEK_PICKUP_TIMEOUT, value);
+        mPeekPickupTimeout.setSummary(mPeekPickupTimeout.getEntries()[index]);
     }
 
     @Override
@@ -278,6 +296,12 @@ public class LockscreenSettings extends SettingsPreferenceFragment
             Settings.System.putIntForUser(getContentResolver(),
                     Settings.System.MENU_UNLOCK_SCREEN,
                     ((Boolean) value) ? 1 : 0, UserHandle.USER_CURRENT);
+        } else if (preference == mPeekPickupTimeout) {
+            int peekTimeout = Integer.valueOf((String) value);
+            Settings.System.putIntForUser(getContentResolver(),
+                Settings.System.PEEK_PICKUP_TIMEOUT,
+                    peekTimeout, UserHandle.USER_CURRENT);
+            updatePeekTimeoutOptions(value);
         }
         return true;
     }
