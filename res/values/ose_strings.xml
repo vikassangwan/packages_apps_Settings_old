@@ -1967,4 +1967,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="peek_pickup_60seconds">1 minute</string>
     <string name="peek_pickup_120seconds">2 minutes</string>
 
+    <!-- QuickSettings haptic feedback -->
+    <string name="haptic_qs_tiles_title">Vibrate on touch</string>
+    <string name="haptic_qs_tiles_summary">Vibrate when touching tiles</string>
+
 </resources>
