@@ -72,7 +72,7 @@ public class MiscTweaks extends SettingsPreferenceFragment implements OnPreferen
 
     private static final String TAG = "MiscTweaks";
 
-    private static final String DISABLE_FC_NOTIFICATIONS = "disable_fc_notifications";
+    /*private static final String DISABLE_FC_NOTIFICATIONS = "disable_fc_notifications";*/
 
 
 
@@ -82,7 +82,7 @@ public class MiscTweaks extends SettingsPreferenceFragment implements OnPreferen
     private static Activity mActivity;
 
     private AppMultiSelectListPreference mIncludedAppCircleBar;
-    private CheckBoxPreference mDisableFC;
+    /*private CheckBoxPreference mDisableFC;*/
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -100,9 +100,9 @@ public class MiscTweaks extends SettingsPreferenceFragment implements OnPreferen
         PreferenceScreen prefSet = getPreferenceScreen();
         final ContentResolver resolver = getActivity().getContentResolver();
 
-        mDisableFC = (CheckBoxPreference) findPreference(DISABLE_FC_NOTIFICATIONS);
+        /*mDisableFC = (CheckBoxPreference) findPreference(DISABLE_FC_NOTIFICATIONS);
         mDisableFC.setChecked((Settings.System.getInt(resolver,
-                Settings.System.DISABLE_FC_NOTIFICATIONS, 0) == 1));
+                Settings.System.DISABLE_FC_NOTIFICATIONS, 0) == 1));*/
 
            
 
@@ -128,16 +128,16 @@ public class MiscTweaks extends SettingsPreferenceFragment implements OnPreferen
         super.onResume();
     }
 
-    @Override
+    /*@Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if  (preference == mDisableFC) {
+        /*if  (preference == mDisableFC) {
             boolean checked = ((CheckBoxPreference)preference).isChecked();
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.DISABLE_FC_NOTIFICATIONS, checked ? 1:0);
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
-    }
+    }*/
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {

@@ -41,13 +41,13 @@
 
     <PreferenceScreen
         android:key="navbar_settings"
-        android:icon="@drawable/ic_lock_navbar"
+        android:icon="@drawable/ic_dt_navbar_dimen"
         android:fragment="com.android.settings.ose.NavbarSettings"
         android:title="@string/navigation_bar" />
 
     <PreferenceScreen
         android:key="pie_settings"
-        android:icon="@drawable/ic_lock_pie"
+        android:icon="@drawable/ic_liquid_pie_control"
         android:fragment="com.android.settings.ose.PieControl"
         android:title="@string/pie_control_title" />
 

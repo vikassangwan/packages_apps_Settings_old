@@ -105,6 +105,13 @@
         android:fragment="com.android.settings.ose.DrivingMode"
         android:icon="@drawable/ic_dt_drivingmode"
         android:title="@string/voice_tts_title" />
+     
+    <!-- Security -->
+    <header
+        android:fragment="com.android.settings.SecuritySettings"
+        android:icon="@drawable/ic_settings_security"
+        android:title="@string/security_settings_title"
+        android:id="@+id/security_settings" />
 
     <!-- DEVICE -->
     <header android:id="@+id/device_section"
@@ -130,13 +137,6 @@
         android:icon="@drawable/ic_settings_display"
         android:fragment="com.android.settings.DisplaySettings"
         android:title="@string/display_settings" />
-    
-    <!-- Security -->
-    <header
-        android:fragment="com.android.settings.SecuritySettings"
-        android:icon="@drawable/ic_settings_security"
-        android:title="@string/security_settings_title"
-        android:id="@+id/security_settings" />
 
     <!-- Battery -->
     <header

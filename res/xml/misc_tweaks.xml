@@ -22,7 +22,10 @@
    
 
 
-
+  <!--<CheckBoxPreference
+        android:key="disable_fc_notifications"
+        android:title="@string/disable_fc_notifications_title"
+        android:persistent="false" />-->
 
 
 

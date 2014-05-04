@@ -31,7 +31,7 @@
     <PreferenceScreen
         android:id="@+id/navigation_settings"
         android:fragment="com.android.settings.ose.NavigationSettings"
-        android:icon="@drawable/ic_settings_navigation"
+        android:icon="@drawable/ic_liquid_navigation"
         android:title="@string/navigation_settings_title" />
        
   </PreferenceCategory>
@@ -42,19 +42,19 @@
     <PreferenceScreen
         android:key="status_bar"
         android:fragment="com.android.settings.ose.StatusBar"
-        android:icon="@drawable/ic_liquid_statusbar"
+        android:icon="@drawable/ic_dt_statusbar"
         android:title="@string/status_bar_title" />
 
     <PreferenceScreen
         android:key="notification_drawer_qs"
         android:fragment="com.android.settings.ose.NotificationDrawerQsSettings"
-        android:icon="@drawable/ic_liquid_notification_drawer"
+        android:icon="@drawable/ic_dt_notification"
         android:title="@string/notification_drawer_qs_title" />
 
     <PreferenceScreen
         android:key="recents_apps_panel"
         android:fragment="com.android.settings.ose.RecentsPanel"
-        android:icon="@drawable/prd_ic_themepacks"
+        android:icon="@drawable/ic_dt_recents"
         android:title="@string/recent_apps_panel_title" />
 
     <PreferenceScreen
@@ -77,13 +77,19 @@
     <PreferenceScreen
         android:key="misc_tweaks"
         android:fragment="com.android.settings.ose.MiscTweaks"
-        android:icon="@drawable/ic_settings_halo"
+        android:icon="@drawable/ic_settings_app_circle"
         android:title="@string/misc_tweaks_title"/>
         
   </PreferenceCategory>
   
   <PreferenceCategory
         android:title="@string/custom_fifth_title">
+        
+     <PreferenceScreen
+        android:id="@+id/advanced_options_settings"
+        android:fragment="com.android.settings.ose.AdvancedSettings"
+        android:icon="@drawable/ic_dt_initd"
+        android:title="@string/advanced_options_settings_title" />
         
      <PreferenceScreen
         android:key="wakelock_blocker"
@@ -93,7 +99,7 @@
      
      <PreferenceScreen
         android:fragment="com.android.settings.ose.BatterySaverSettings"
-        android:icon="@drawable/ic_shortcut_battery"
+        android:icon="@drawable/ic_shortcut_battery_96x96"
         android:title="@string/battery_saver_title" />
 
      <PreferenceScreen
@@ -101,23 +107,7 @@
         android:fragment="com.android.settings.ose.SystemappRemover"
         android:icon="@drawable/ic_settings_slim_sizer"
         android:title="@string/system_app_remover_title" />
-        
-       <PreferenceScreen
-        android:key="devicesettings_app"
-        android:icon="@drawable/prd_ic_wallpapers"
-        android:title="@string/device_settings_title">
-        <intent
-            android:action="com.cyanogenmod.action.LAUNCH_DEVICE_SETTINGS"
-            android:targetPackage="com.cyanogenmod.settings.device"
-            android:targetClass="com.cyanogenmod.settings.device.DeviceSettings" />
-    </PreferenceScreen>
-
-     <PreferenceScreen
-        android:id="@+id/advanced_options_settings"
-        android:fragment="com.android.settings.ose.AdvancedSettings"
-        android:icon="@drawable/ic_dt_misctweaks"
-        android:title="@string/advanced_options_settings_title" />
-        
+            
   </PreferenceCategory>
 
 </PreferenceScreen>

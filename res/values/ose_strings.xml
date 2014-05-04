@@ -33,7 +33,7 @@
     <string name="header_category_rom_settings">Main</string>
 
     <!-- OSE settings screens -->
-    <string name="interface_settings_title">Personalize</string>
+    <string name="interface_settings_title">Personalise</string>
     <string name="lockscreen_settings_title">Lockscreen</string>
     <string name="navigation_settings_title">Navigation</string>
     <!-- Advanced, Device specific (DeviceParts) settings  -->
@@ -117,7 +117,7 @@
     <string name="privacy_guard_default_summary">Do not access personal data by default for newly-installed apps</string>
     <string name="privacy_guard_notification_title">Notification</string>
     <string name="privacy_guard_notifiation_summary">Show notification if privacy guard is active.</string>
-    <string name="privacy_guard_manager_title">Privacy Guard</string>
+    <string name="privacy_guard_manager_title">Privacy guard</string>
     <string name="privacy_guard_manager_summary">Manage which apps have access to your personal data and other apps permissions</string>
     <string name="privacy_guard_no_user_apps">No apps are installed</string>
     <string name="privacy_guard_filter_does_not_match">No apps with relevant permissions are installed</string>
@@ -628,7 +628,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="navigation_bar_glow_tint_title">Glow color</string>
 
     <!-- Advanced settings -->
-    <string name="advanced_options_settings_title">Miscellaneous</string>
+    <string name="advanced_options_settings_title">Advanced</string>
 
     <!-- MediaScanner behavior on boot -->
     <string name="media_scanner_on_boot_title">MediaScanner behavior on boot</string>
@@ -1057,7 +1057,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="storage_rescan_media_complete">Scan completed</string>
 
     <!-- Performance Settings | Warning dialog -->
-    <string name="kernel_tweaker_title">Performance</string>
+    <string name="kernel_tweaker_title">Kernel tweaker</string>
     <string name="performance_settings_warning_header">Warning</string>
     <string name="performance_settings_warning_title">Proceed with Caution</string>
 
@@ -1206,7 +1206,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Text for disabling FC notifications -->
     <string name="disable_fc_notifications_title">Disable FC notifications</string>
-    <string name="disable_fc_notifications_summary">This will hide all force close notificaitons</string>
+    <string name="disable_fc_notifications_summary">This will hide all force close notifications</string>
 
     <!-- Text for Misc Tweaks entry -->
     <string name="misc_tweaks_title">Omni app circle</string>
@@ -1260,7 +1260,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="font_size_sample">Sample</string>
 
     <!--AppOps-->
-    <string name="appops_settings_title">Application activity</string>
+    <string name="appops_settings_title">AppOps</string>
 
     <!-- Animation Controls -->
     <string name="title_animation_controls">Custom system animations</string>
@@ -1763,7 +1763,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Recent panel -->
     <string name="recent_apps_panel_title" >Recent apps switcher</string>
     <string name="recent_switcher_title" >Default is AOSB</string>
-    <string name="recent_panel_category">Slim recents Customization</string>
+    <string name="recent_panel_category">Slim recents Customisation</string>
     <string name="recent_panel_scale_title">Size</string>
     <string name="recent_panel_scale_summary">Recent apps panel size in percent.</string>
     <string name="recent_panel_100">100% (default)</string>
@@ -2032,9 +2032,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="custom_fourth_title">Omni rom</string>
     <string name="custom_fifth_title">Leftovers</string>
     <string name="custom_sixth_title">Extras</string>
-    <string name="custom_seventh_title">Privacy</string>
+    <string name="custom_seventh_title">Settings</string>
     <string name="custom_eighth_title">Modder</string>
-    <string name="custom_ninth_title">Extras</string>
+    <string name="custom_ninth_title">Control root permissions</string>
+    <string name="custom_section_title">Miscellaneous</string>
 
 
 
