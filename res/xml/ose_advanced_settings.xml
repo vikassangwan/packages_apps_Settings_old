@@ -49,22 +49,7 @@
         android:summary="@string/disable_fc_notifications_summary" />
 
    </PreferenceCategory>
-
-   <PreferenceCategory
-            android:title="@string/category_app_launchers_title">
-
-    <PreferenceScreen
-                android:key="app_sidebar"
-                android:fragment="com.android.settings.ose.AppSidebar"
-                android:title="@string/app_sidebar_title" />
-
-    <PreferenceScreen
-                android:key="gesture_anywhere"
-                android:fragment="com.android.settings.ose.gestureanywhere.GestureAnywhereSettings"
-                android:title="@string/gesture_anywhere_title" />
-
-   </PreferenceCategory>
-   
+ 
    <PreferenceCategory
         android:title="@string/custom_eighth_title">
    

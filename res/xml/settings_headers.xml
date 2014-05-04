@@ -103,7 +103,7 @@
     <header
         android:key="interface_voice_tts"
         android:fragment="com.android.settings.ose.DrivingMode"
-        android:icon="@drawable/ic_dt_drivingmode"
+        android:icon="@drawable/stat_notify_car_mode"
         android:title="@string/voice_tts_title" />
      
     <!-- Security -->

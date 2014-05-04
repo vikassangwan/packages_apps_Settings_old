@@ -60,7 +60,7 @@
     <PreferenceScreen
         android:key="ose_screen_and_animations"
         android:fragment="com.android.settings.ose.ScreenAndAnimations"
-        android:icon="@drawable/ic_dt_animations"
+        android:icon="@drawable/prd_ic_style_78x78"
         android:title="@string/screen_and_animations_title" />
         
   </PreferenceCategory>
@@ -71,7 +71,7 @@
     <PreferenceScreen
         android:id="@+id/halo_settings"
         android:title="@string/halo_settings_title"
-        android:icon="@drawable/ic_liquid_halo_options"
+        android:icon="@drawable/ic_dt_halo"
         android:fragment="com.android.settings.ose.Halo" />
 
     <PreferenceScreen
@@ -82,13 +82,30 @@
         
   </PreferenceCategory>
   
+   <PreferenceCategory
+            android:title="@string/category_app_launchers_title">
+
+    <PreferenceScreen
+                android:key="app_sidebar"
+                android:fragment="com.android.settings.ose.AppSidebar"
+                android:icon="@drawable/ic_dt_sidebar"
+                android:title="@string/app_sidebar_title" />
+
+    <PreferenceScreen
+                android:key="gesture_anywhere"
+                android:icon="@drawable/ic_dt_gesture_anywhere"
+                android:fragment="com.android.settings.ose.gestureanywhere.GestureAnywhereSettings"
+                android:title="@string/gesture_anywhere_title" />
+
+   </PreferenceCategory>
+  
   <PreferenceCategory
         android:title="@string/custom_fifth_title">
         
      <PreferenceScreen
         android:id="@+id/advanced_options_settings"
         android:fragment="com.android.settings.ose.AdvancedSettings"
-        android:icon="@drawable/ic_dt_initd"
+        android:icon="@drawable/scrubber_control_focused_holo_dark_82x82"
         android:title="@string/advanced_options_settings_title" />
         
      <PreferenceScreen

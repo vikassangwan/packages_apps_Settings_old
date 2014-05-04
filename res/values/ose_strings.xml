@@ -1605,8 +1605,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- App sidebar -->
     <string name="app_sidebar_title">Appbar</string>
     <string name="app_sidebar_enable_title">Enable Appbar</string>
-    <string name="app_sidebar_enable_summaryOn">\@appbar is enabled</string>
-    <string name="app_sidebar_enable_summaryOff">\@appbar is disabled</string>
+    <string name="app_sidebar_enable_summaryOn">\AAppbar is active</string>
+    <string name="app_sidebar_enable_summaryOff">\DDisabled</string>
     <string name="app_sidebar_setup_items_title">Setup Appbar content</string>
     <string name="app_sidebar_setup_items_summary">Add, remove, and position items in the @ppbar</string>
     <string name="app_sidebar_transparency_title">Appbar transparency</string>
@@ -1662,8 +1662,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Gesture Anywhere -->
     <string name="gesture_anywhere_title">Gesture anywhere</string>
-    <string name="gesture_anywhere_enabled_title">Gesture Anywhere</string>
-    <string name="gesture_anywhere_enabled_summary">Enable the Gesture Anywhere feature</string>
+    <string name="gesture_anywhere_enabled_title">Enable gesture anywhere</string>
+    <string name="gesture_anywhere_enabled_summary">Perform gestures to execute custom actions</string>
     <string name="gesture_anywhere_position_title">Loction</string>
     <string name="gesture_anywhere_position_left">Left edge</string>
     <string name="gesture_anywhere_position_right">Right edge</string>
@@ -2046,7 +2046,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="custom_eighth_title">Modder</string>
     <string name="custom_ninth_title">Control root permissions</string>
     <string name="custom_section_title">Miscellaneous</string>
-
-
+    <string name="custom_tenth_title">View recent activities of installed apps</string>
+    
+    <!-- Double tap to sleep -->
+    <string name="double_tap_to_sleep_title">Double tap to sleep</string>
+    <string name="double_tap_to_sleep_summary">Allow double tap in statusbar to turn off screen</string>  
 
 </resources>

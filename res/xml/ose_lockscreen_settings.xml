@@ -24,13 +24,13 @@
 
         <PreferenceScreen
             android:key="active_display"
-            android:icon="@drawable/ic_dt_activedisplay"
+            android:icon="@drawable/ic_liquid_active_display_78x78"
             android:fragment="com.android.settings.ose.ActiveDisplaySettings"
             android:title="@string/ad_settings_title" />
 
         <PreferenceScreen
             android:title="@string/lockscreen_notifications"
-            android:icon="@drawable/ic_settings_actived"
+            android:icon="@drawable/ic_dt_activedisplay"
             android:fragment="com.android.settings.ose.LockscreenNotifications" />
 
         <CheckBoxPreference
