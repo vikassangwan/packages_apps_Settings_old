@@ -780,6 +780,7 @@
         <item>@string/shortcut_action_power_off</item>
         <item>@string/shortcut_action_reboot</item>
         <item>@string/shortcut_action_screenshot</item>
+        <item>@string/shortcut_action_onthego</item>
         <item>@string/shortcut_action_sound</item>
     </string-array>
 
@@ -792,6 +793,7 @@
         <item>**poweroff**</item>
         <item>**reboot**</item>
         <item>**screenshot**</item>
+        <item>**onthego**</item>
         <item>**sound**</item>
     </string-array>
 
